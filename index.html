@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #fff; color: #111; font-family: Jost, "Century Gothic", sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #111; text-decoration: none; }
+  a:hover { color: #b8552b; }
+  @keyframes noodle { to { stroke-dashoffset: -100; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes hiSpin { to { transform: rotate(1turn); } }
+  @keyframes lyricsDrift { from { transform: translateY(0); } to { transform: translateY(calc(-100% + clamp(300px, 34vw, 520px))); } }
+  @keyframes wavePulse { 0%, 100% { transform: scaleY(.42); opacity: .55; } 50% { transform: scaleY(1); opacity: 1; } }
+</style>
+</helmet>
+<div style="width:100%; overflow-x:hidden">
+
+  <section style="position:relative; height:100vh; width:100%; overflow:hidden; background:#8a7a6e">
+    <div ref="{{ parallaxRef }}" style="position:absolute; inset:-12% 0 -12% 0; will-change:transform">
+      <video src="assets/hero-video.mp4" autoplay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; background:#5e4740"></video>
+    </div>
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.32))"></div>
+    <div ref="{{ heroTextRef }}" style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; text-align:center; padding:0 24px; will-change:transform">
+      <h1 style="margin:0; font-size:clamp(32px,7.4vw,104px); font-weight:500; letter-spacing:-.02em; line-height:1; color:#fff; white-space:nowrap">creative vision</h1>
+      <p style="margin:0; font-size:clamp(11px,1.4vw,15px); letter-spacing:.28em; text-transform:uppercase; color:rgba(255,255,255,.9)">Sylvia Trieu Portfolio</p>
+      <div style="display:flex; align-items:center; justify-content:center; gap:14px; margin-top:clamp(18px,2.4vh,28px); flex-wrap:wrap">
+        <span aria-current="page" style="display:flex; align-items:center; gap:9px; height:42px; padding:0 18px; border-radius:999px; background:#111; border:1.5px solid #fff; color:#fff; font-size:13px; font-weight:600; letter-spacing:.01em; cursor:default; user-select:none; box-shadow:0 6px 18px rgba(0,0,0,.28)">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" style="flex:none"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.4 2.6 15.6 0 18M12 3c-2.6 2.4-2.6 15.6 0 18"></path></svg>
+          <span>Deutsch</span>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" style="flex:none"><path d="M9 5l7 7-7 7"></path></svg>
+        </span>
+        <a href="index-en.html" style="display:flex; align-items:center; gap:9px; height:42px; padding:0 18px; border-radius:999px; background:#fff; border:1.5px solid rgba(17,17,17,.9); color:#111; font-size:13px; font-weight:600; letter-spacing:.01em; text-decoration:none; transition:background .2s ease, transform .2s ease; box-shadow:0 6px 18px rgba(0,0,0,.22)" style-hover="background:#f1eeea; transform:translateY(-1px)">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" style="flex:none"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.4 2.6 15.6 0 18M12 3c-2.6 2.4-2.6 15.6 0 18"></path></svg>
+          <span>English</span>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" style="flex:none"><path d="M9 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+    <div style="position:absolute; left:50%; bottom:34px; transform:translateX(-50%); width:1px; height:52px; background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.8))"></div>
+  </section>
+
+  <section style="padding:clamp(70px,12vh,150px) 0 clamp(80px,14vh,170px); background:#fff">
+    <h2 style="margin:0 0 clamp(40px,7vh,96px); text-align:center; font-size:clamp(30px,5.2vw,64px); font-weight:600; letter-spacing:-.015em">ai fashion</h2>
+    <div style="position:relative; z-index:2; display:grid; grid-template-columns:repeat(3,1fr); gap:0; padding:0 clamp(12px,4.5vw,72px)">
+      <div style="aspect-ratio:585/916; background:#dcdad7; overflow:hidden"><img src="assets/nandemoii-1.avif" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block"></img></div>
+      <div style="aspect-ratio:585/916; background:#dcdad7; overflow:hidden"><img src="assets/nandemoii-2.avif" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block"></img></div>
+      <div style="aspect-ratio:585/916; background:#dcdad7; overflow:hidden"><img src="assets/nandemoii-3.avif" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block"></img></div>
+    </div>
+    <div style="position:relative; z-index:1; width:100%; margin-top:-6%; aspect-ratio:1900/570; background:#cfd3d6; overflow:visible">
+      <img src="assets/nandemoii-4.avif" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block"></img>
+      <div style="position:absolute; left:50%; bottom:0; transform:translate(-50%,42%); display:flex; align-items:flex-end">
+        <button onClick="{{ openNandemoii }}" style="position:relative; isolation:isolate; border:0; cursor:pointer; font-family:inherit; background:#5257b0; color:#fff; border-radius:999px; padding:clamp(24px,3vw,39px) clamp(51px,7.5vw,108px); font-size:clamp(22px,2.55vw,42px); font-weight:600; letter-spacing:.04em; text-transform:uppercase; box-shadow:0 10px 30px rgba(40,42,90,.22), 0 0 0 2px rgba(226,184,255,.95), 0 0 18px 2px rgba(216,180,254,.55), 0 0 34px 6px rgba(216,180,254,.28)" style-hover="background:#464b9e">Open project</button>
+        <svg viewBox="0 0 24 30" aria-hidden="true" style="width:clamp(33px,3.9vw,63px); height:auto; margin-left:.1em; margin-bottom:-.15em; display:block; flex:none">
+          <path d="M2 1.6 L2 27 L8.4 20.8 L12.6 29.2 L16.4 27.4 L12.2 19 L21 18.6 Z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(70px,12vh,150px) 0 0; background:#fff">
+    <h2 style="margin:0 0 clamp(40px,7vh,96px); text-align:center; font-size:clamp(30px,5.2vw,64px); font-weight:600; letter-spacing:-.015em">stable diffusion workflow</h2>
+    <div style="position:relative; background:#eceaf3; padding:clamp(32px,5vw,64px) clamp(20px,5vw,80px) clamp(70px,10vh,110px)">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(28px,4vw,64px); max-width:1500px; margin:0 auto; align-items:start">
+        <div style="justify-self:center; width:100%; display:flex; flex-direction:column; align-items:center; gap:14px">
+          <sc-if value="{{ feat0 }}" hint-placeholder-val="{{ false }}">
+            <img src="assets/product-to-model.avif" alt="Product to model" style="width:100%; max-width:640px; height:auto; object-fit:contain; display:block"></img>
+          </sc-if>
+          <sc-if value="{{ feat1 }}" hint-placeholder-val="{{ false }}">
+            <img src="assets/edit.avif" alt="Edit" style="width:100%; max-width:640px; height:auto; object-fit:contain; display:block"></img>
+          </sc-if>
+          <sc-if value="{{ feat2 }}" hint-placeholder-val="{{ false }}">
+            <img src="assets/change-angle.avif" alt="Change Angle" style="width:100%; max-width:640px; height:auto; object-fit:contain; display:block"></img>
+          </sc-if>
+          <span style="font-size:clamp(14px,1.5vw,19px); font-weight:600; color:#3a3634">{{ featureLabel }}</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:0 4px">
+            <span style="font-size:clamp(14px,1.3vw,18px); color:#3a3634">Select a Feature</span>
+            <span style="font-size:clamp(11px,1vw,14px); color:#9a938c">Click to preview</span>
+          </div>
+          <sc-for list="{{ features }}" as="f" hint-placeholder-count="3">
+            <button onClick="{{ f.pick }}" style="display:flex; align-items:center; gap:16px; width:100%; border:0; cursor:pointer; font-family:inherit; text-align:left; border-radius:999px; padding:clamp(10px,1.1vw,15px) clamp(14px,1.6vw,22px); background:{{ f.bg }}; color:{{ f.color }}; transition:background .18s ease, color .18s ease" style-hover="opacity:.9">
+              <span style="width:clamp(34px,3vw,44px); height:clamp(34px,3vw,44px); border-radius:12px; background:{{ f.iconBg }}; display:flex; align-items:center; justify-content:center; flex:none">
+                <span style="width:14px; height:14px; border:2px solid currentColor; border-radius:4px; opacity:.75"></span>
+              </span>
+              <span style="font-size:clamp(15px,1.5vw,21px); font-weight:600; letter-spacing:-.005em">{{ f.label }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="position:absolute; left:50%; bottom:0; transform:translate(-50%,45%); z-index:20; display:flex; align-items:flex-end">
+        <button onClick="{{ openComfy }}" style="position:relative; isolation:isolate; border:0; cursor:pointer; font-family:inherit; background:#5257b0; color:#fff; border-radius:999px; padding:clamp(24px,3vw,39px) clamp(51px,7.5vw,108px); font-size:clamp(22px,2.55vw,42px); font-weight:600; letter-spacing:.04em; text-transform:uppercase; box-shadow:0 10px 30px rgba(40,42,90,.22), 0 0 0 2px rgba(226,184,255,.95), 0 0 18px 2px rgba(216,180,254,.55), 0 0 34px 6px rgba(216,180,254,.28)" style-hover="background:#464b9e">Open project</button>
+        <svg viewBox="0 0 24 30" aria-hidden="true" style="width:clamp(33px,3.9vw,63px); height:auto; margin-left:.1em; margin-bottom:-.15em; display:block; flex:none">
+          <path d="M2 1.6 L2 27 L8.4 20.8 L12.6 29.2 L16.4 27.4 L12.2 19 L21 18.6 Z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+    <div style="height:clamp(70px,11vh,140px)"></div>
+  </section>
+
+  <section style="padding-top:clamp(110px,18vh,220px); background:#fff">
+    <h2 style="margin:0 0 clamp(40px,7vh,96px); text-align:center; font-size:clamp(30px,5.2vw,64px); font-weight:600; letter-spacing:-.015em">ai accessory</h2>
+    <div style="position:relative; width:100%; overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch">
+    <div style="position:relative; min-width:1180px; width:100%; aspect-ratio:1900/1500; container-type:inline-size">
+      <div style="position:absolute; left:0; top:0; right:0; height:54%; overflow:hidden; background:#f0cdd3">
+        <img src="assets/workflow-background.avif" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center top; display:block">
+      </div>
+
+      <svg viewBox="0 0 1900 1500" preserveAspectRatio="none" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible; z-index:3">
+        <sc-for list="{{ edges }}" as="e" hint-placeholder-count="6">
+          <g>
+            <path d="{{ e.d }}" fill="none" stroke="#8f8f8f" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+            <circle cx="{{ e.x1 }}" cy="{{ e.y1 }}" r="9" fill="#fff" stroke="#8f8f8f" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+            <circle cx="{{ e.x2 }}" cy="{{ e.y2 }}" r="9" fill="#fff" stroke="#8f8f8f" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+          </g>
+        </sc-for>
+      </svg>
+
+      <sc-for list="{{ nodes }}" as="n" hint-placeholder-count="9">
+        <div style="position:absolute; left:{{ n.left }}%; top:{{ n.top }}%; width:{{ n.width }}%; height:{{ n.hStyle }}">
+          <span style="position:absolute; top:-1.9em; left:0; font-size:0.7cqw; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:#111; white-space:nowrap">{{ n.label }}</span>
+          <sc-if value="{{ n.isImage }}" hint-placeholder-val="{{ true }}">
+            <div style="width:100%; height:100%; background:#e8e4e2; overflow:hidden">
+              <img src="{{ n.src }}" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block"></img>
+            </div>
+          </sc-if>
+          <sc-if value="{{ n.text }}" hint-placeholder-val="{{ false }}">
+            <div style="width:100%; background:#fff; box-shadow:0 1px 10px rgba(0,0,0,.09); padding:4% 5%; box-sizing:border-box">
+              <p style="margin:0; font-size:0.58cqw; line-height:1.42; font-weight:400; color:#222; text-wrap:pretty">{{ n.text }}</p>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+    </div>
+  </section>
+
+  <div style="display:flex; align-items:flex-end; justify-content:center; padding:0 20px clamp(80px,13vh,160px); margin-top:-2%; position:relative; z-index:20">
+    <button onClick="{{ openEggo }}" style="position:relative; isolation:isolate; border:0; cursor:pointer; font-family:inherit; background:#5257b0; color:#fff; border-radius:999px; padding:clamp(24px,3vw,39px) clamp(51px,7.5vw,108px); font-size:clamp(22px,2.55vw,42px); font-weight:600; letter-spacing:.04em; text-transform:uppercase; box-shadow:0 10px 30px rgba(40,42,90,.22), 0 0 0 2px rgba(226,184,255,.95), 0 0 18px 2px rgba(216,180,254,.55), 0 0 34px 6px rgba(216,180,254,.28)" style-hover="background:#464b9e">Open project</button>
+    <svg viewBox="0 0 24 30" aria-hidden="true" style="width:clamp(33px,3.9vw,63px); height:auto; margin-left:.1em; margin-bottom:-.15em; display:block; flex:none">
+      <path d="M2 1.6 L2 27 L8.4 20.8 L12.6 29.2 L16.4 27.4 L12.2 19 L21 18.6 Z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+    </svg>
+  </div>
+
+  <section style="padding:clamp(70px,12vh,150px) 0 clamp(80px,14vh,170px); background:#fff">
+    <h2 style="margin:0 0 clamp(40px,7vh,96px); text-align:center; font-size:clamp(30px,5.2vw,64px); font-weight:600; letter-spacing:-.015em">ai skincare</h2>
+    <div style="position:relative; z-index:2; display:grid; grid-template-columns:repeat(3,1fr); gap:0; padding:0 clamp(12px,4.5vw,72px)">
+      <img src="assets/ai-serum-1.avif" alt="ai serum 1" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#dcdad7"></img>
+      <img src="assets/ai-serum-2.avif" alt="ai serum 2" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#e3e1de"></img>
+      <img src="assets/ai-serum-3.avif" alt="ai serum 3" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#dcdad7"></img>
+    </div>
+    <div style="position:relative; z-index:1; width:100%; margin-top:-6%; aspect-ratio:1900/570; background:#cfd3d6; display:flex; align-items:center; justify-content:center">
+      <img src="assets/ai-serum-4.avif" alt="ai serum full bleed" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block"></img>
+      <div style="position:absolute; left:50%; bottom:0; transform:translate(-50%,42%); display:flex; align-items:flex-end">
+        <button onClick="{{ openSerum }}" style="position:relative; isolation:isolate; border:0; cursor:pointer; font-family:inherit; background:#5257b0; color:#fff; border-radius:999px; padding:clamp(24px,3vw,39px) clamp(51px,7.5vw,108px); font-size:clamp(22px,2.55vw,42px); font-weight:600; letter-spacing:.04em; text-transform:uppercase; box-shadow:0 10px 30px rgba(40,42,90,.22), 0 0 0 2px rgba(226,184,255,.95), 0 0 18px 2px rgba(216,180,254,.55), 0 0 34px 6px rgba(216,180,254,.28)" style-hover="background:#464b9e">Open project</button>
+        <svg viewBox="0 0 24 30" aria-hidden="true" style="width:clamp(33px,3.9vw,63px); height:auto; margin-left:.1em; margin-bottom:-.15em; display:block; flex:none">
+          <path d="M2 1.6 L2 27 L8.4 20.8 L12.6 29.2 L16.4 27.4 L12.2 19 L21 18.6 Z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(70px,12vh,150px) 0 clamp(80px,13vh,160px); background:#fff">
+    <h2 style="margin:0 0 clamp(40px,7vh,96px); text-align:center; font-size:clamp(30px,5.2vw,64px); font-weight:600; letter-spacing:-.015em">ai music</h2>
+    <div style="position:relative; width:100%; min-height:clamp(560px,64vw,1050px); background:linear-gradient(140deg,#e9e4e6 0%,#f3dfe6 35%,#efe6ef 70%,#e4dee6 100%); overflow:hidden">
+      <img src="assets/pantomime-background.avif" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.5; display:block"></img>
+      <div style="position:relative; z-index:2; display:grid; grid-template-columns:minmax(240px,1fr) minmax(300px,1.5fr) minmax(240px,1fr); gap:clamp(20px,3vw,56px); align-items:start; padding:clamp(28px,4vw,72px) clamp(20px,4vw,68px)">
+        <div style="display:flex; flex-direction:column; align-items:flex-start; gap:clamp(12px,1.6vw,26px)">
+          <div style="display:flex; align-items:center; gap:clamp(10px,1.2vw,20px); background:rgba(255,255,255,.92); border-radius:999px; padding:clamp(7px,.8vw,12px) clamp(18px,2.2vw,34px) clamp(7px,.8vw,12px) clamp(7px,.8vw,12px); box-shadow:0 8px 26px rgba(60,40,55,.12)">
+            <span style="background:#ece9f0; border-radius:999px; padding:clamp(7px,.9vw,13px) clamp(13px,1.4vw,22px); font-size:clamp(9px,.8vw,13px); font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#3a3634; white-space:nowrap">ChatGPT</span>
+            <span style="font-size:clamp(13px,1.3vw,21px); font-weight:600; letter-spacing:-.01em; color:#111; white-space:nowrap">Concept</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:clamp(10px,1.2vw,20px); background:rgba(255,255,255,.92); border-radius:999px; padding:clamp(7px,.8vw,12px) clamp(18px,2.2vw,34px) clamp(7px,.8vw,12px) clamp(7px,.8vw,12px); box-shadow:0 8px 26px rgba(60,40,55,.12)">
+            <span style="background:#ece9f0; border-radius:999px; padding:clamp(7px,.9vw,13px) clamp(13px,1.4vw,22px); font-size:clamp(9px,.8vw,13px); font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Suno</span>
+            <span style="font-size:clamp(13px,1.3vw,21px); font-weight:600; letter-spacing:-.01em; color:#111; white-space:nowrap">Song producing</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:clamp(10px,1.2vw,20px); background:rgba(255,255,255,.92); border-radius:999px; padding:clamp(7px,.8vw,12px) clamp(18px,2.2vw,34px) clamp(7px,.8vw,12px) clamp(7px,.8vw,12px); box-shadow:0 8px 26px rgba(60,40,55,.12)">
+            <span style="background:#ece9f0; border-radius:999px; padding:clamp(7px,.9vw,13px) clamp(13px,1.4vw,22px); font-size:clamp(9px,.8vw,13px); font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Midjourney</span>
+            <span style="font-size:clamp(13px,1.3vw,21px); font-weight:600; letter-spacing:-.01em; color:#111; white-space:nowrap">Image Generation</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:clamp(10px,1.2vw,20px); background:rgba(255,255,255,.92); border-radius:999px; padding:clamp(7px,.8vw,12px) clamp(18px,2.2vw,34px) clamp(7px,.8vw,12px) clamp(7px,.8vw,12px); box-shadow:0 8px 26px rgba(60,40,55,.12)">
+            <span style="background:#ece9f0; border-radius:999px; padding:clamp(7px,.9vw,13px) clamp(13px,1.4vw,22px); font-size:clamp(9px,.8vw,13px); font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Lumalabs AI</span>
+            <span style="font-size:clamp(13px,1.3vw,21px); font-weight:600; letter-spacing:-.01em; color:#111; white-space:nowrap">Video &amp; Voice</span>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:clamp(14px,1.6vw,24px)">
+          <div style="display:flex; justify-content:center">
+            <span style="font-size:clamp(9px,.78vw,12px); font-weight:600; letter-spacing:.24em; text-transform:uppercase; color:rgba(38,26,34,.72)">[ Click to play soundtrack ]</span>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:clamp(14px,1.6vw,24px); background:rgba(255,255,255,.24); backdrop-filter:blur(22px) saturate(150%); -webkit-backdrop-filter:blur(22px) saturate(150%); border:1px solid rgba(255,255,255,.42); border-radius:999px; padding:clamp(12px,1.2vw,18px) clamp(20px,2vw,30px) clamp(12px,1.2vw,18px) clamp(12px,1.2vw,16px); box-shadow:0 20px 46px rgba(60,40,55,.24)">
+            <audio ref="{{ songRef }}" src="assets/Pantomime.mp3" onTimeUpdate="{{ onSongTime }}" onEnded="{{ onSongEnd }}" style="display:none"></audio>
+            <button onClick="{{ toggleSong }}" aria-label="Play" style="flex:none; width:clamp(46px,4vw,58px); height:clamp(46px,4vw,58px); border-radius:50%; border:1px solid rgba(255,255,255,.75); background:linear-gradient(150deg,#d8c2f5,#c3a7ee 55%,#b79ae8); color:#2a1f38; cursor:pointer; font-family:inherit; font-size:15px; line-height:1; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 6px rgba(200,170,240,.18), 0 0 22px 4px rgba(198,166,238,.55), 0 8px 20px rgba(60,40,55,.22); transition:box-shadow .25s ease" style-hover="box-shadow:0 0 0 8px rgba(200,170,240,.24), 0 0 30px 8px rgba(198,166,238,.7), 0 8px 22px rgba(60,40,55,.26)">{{ songIcon }}</button>
+            <div style="flex:1; display:flex; flex-direction:column; gap:clamp(7px,.7vw,11px); min-width:0">
+              <div style="display:flex; align-items:flex-end; gap:2px; height:clamp(24px,2.4vw,34px); opacity:.85"><span style="flex:1; height:7px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0s infinite"></span><span style="flex:1; height:13px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.16s infinite"></span><span style="flex:1; height:20px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.32s infinite"></span><span style="flex:1; height:11px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.48s infinite"></span><span style="flex:1; height:26px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.64s infinite"></span><span style="flex:1; height:16px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.8s infinite"></span><span style="flex:1; height:9px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.96s infinite"></span><span style="flex:1; height:22px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0s infinite"></span><span style="flex:1; height:14px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.16s infinite"></span><span style="flex:1; height:28px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.32s infinite"></span><span style="flex:1; height:12px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.48s infinite"></span><span style="flex:1; height:18px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.64s infinite"></span><span style="flex:1; height:8px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.8s infinite"></span><span style="flex:1; height:24px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.96s infinite"></span><span style="flex:1; height:15px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0s infinite"></span><span style="flex:1; height:10px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.16s infinite"></span><span style="flex:1; height:21px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.32s infinite"></span><span style="flex:1; height:13px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.48s infinite"></span><span style="flex:1; height:27px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.64s infinite"></span><span style="flex:1; height:9px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.8s infinite"></span><span style="flex:1; height:17px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.96s infinite"></span><span style="flex:1; height:23px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0s infinite"></span><span style="flex:1; height:11px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.16s infinite"></span><span style="flex:1; height:19px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.32s infinite"></span><span style="flex:1; height:7px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.48s infinite"></span><span style="flex:1; height:25px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.64s infinite"></span><span style="flex:1; height:14px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.8s infinite"></span><span style="flex:1; height:12px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.96s infinite"></span><span style="flex:1; height:20px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0s infinite"></span><span style="flex:1; height:8px; border-radius:2px; background:rgba(255,255,255,.72); transform-origin:center; animation:wavePulse 1.8s ease-in-out 0.16s infinite"></span></div>
+              <div style="position:relative; height:2px; border-radius:2px; background:rgba(40,28,38,.22)">
+                <div style="position:absolute; left:0; top:0; bottom:0; border-radius:2px; width:{{ songPct }}; background:linear-gradient(90deg,#c8aef0,#efe0ff)"></div>
+              </div>
+              <div style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:4px 12px">
+                <span style="font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:rgba(34,24,32,.78); text-wrap:pretty">Song Pantomime — Suno AI Synthesis</span>
+                <span style="font-size:9.5px; letter-spacing:.1em; color:rgba(34,24,32,.55); font-variant-numeric:tabular-nums; white-space:nowrap">{{ songTime }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="position:relative; height:clamp(300px,34vw,520px); overflow:hidden; border-radius:20px; border:1px solid rgba(255,255,255,.2); background:rgba(22,16,21,.5); backdrop-filter:blur(20px) saturate(130%); -webkit-backdrop-filter:blur(20px) saturate(130%); box-shadow:0 18px 50px rgba(40,26,38,.28); mask-image:linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%); -webkit-mask-image:linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%)">
+          <div style="padding:clamp(20px,2.4vw,40px) clamp(18px,2vw,32px); animation:lyricsDrift 110s linear infinite">
+            <pre style="margin:0; font-family:inherit; white-space:pre-wrap; font-size:clamp(11px,.95vw,15px); line-height:2; font-weight:300; letter-spacing:.02em; color:rgba(255,255,255,.88); text-wrap:pretty">[Verse 1]
+you press your palm against the air
+like there's a wall that's really there
+I watch you build it, brick by brick
+just silence and your fingertips
+no key, no door, no need to knock
+you trace the shape, I feel it lock
+a room for two, no blueprint, no plan
+just the quiet architecture of your hands
+
+[Pre-Chorus]
+nobody sees it, nobody knows
+but I can feel where the fourth wall goes
+you don't say stay, you don't say mine
+you just close your eyes and build the line
+
+[Chorus]
+we're living in an invisible box
+soundproof, safe, nobody talks
+just your hands on the glass I can't see
+tracing out "I love you" over me
+no words, no sound, just space we made
+a room for two in the love we've stayed
+so hold the wall, don't let it drop
+this quiet box is all we've got
+
+[Verse 2]
+you leave a window, cracked, just right
+a gesture folded into night
+you touch the glass, I touch it too
+somehow I always know it's true
+the city's loud outside these walls
+but nothing gets in, nothing falls
+just you, the shape of what you feel
+sealed in air, but it's still real
+
+[Pre-Chorus]
+nobody sees it, nobody knows
+but I can feel where the fourth wall goes
+you don't say stay, you don't say mine
+you just close your eyes and build the line
+
+[Chorus]
+we're living in an invisible box
+soundproof, safe, nobody talks
+just your hands on the glass I can't see
+tracing out "I love you" over me
+no words, no sound, just space we made
+a room for two in the love we've stayed
+so hold the wall, don't let it drop
+this quiet box is all we've got
+
+[Bridge]
+(half-spoken, breathy, vocals pulled back — almost a whisper)
+what if the walls came down one night
+what if you said it, black and white—
+would it break the spell we're in
+or would it just let daylight in
+(pause — a beat of silence)
+I don't need you to say the words
+I've read them in a thousand blurs
+of hands on glass and held-back air
+you love me like you're always there
+
+[Final Chorus]
+we're living in an invisible box
+soundproof, safe, nobody talks
+just your hands on the glass I can't see
+tracing out "I love you" over me
+so hold the wall
+don't let it drop
+this quiet box
+is all we've got</pre>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:clamp(12px,1.4vw,20px)">
+          <h3 style="margin:0; font-size:clamp(17px,1.7vw,27px); font-weight:600; letter-spacing:-.01em; color:#111">Concept Pantomime</h3>
+          <div style="position:relative; box-shadow:0 18px 50px rgba(60,40,55,.22)">
+            <video src="assets/Pantomime-Intro.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" onVolumeChange="{{ syncAudioLabel }}" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; background:#1b1519"></video>
+            <button onClick="{{ toggleAudio }}" style="position:absolute; right:12px; top:12px; z-index:2; display:flex; align-items:center; gap:7px; border:0; cursor:pointer; font-family:inherit; background:rgba(17,17,17,.78); color:#fff; border-radius:999px; padding:8px 14px; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase" style-hover="background:#111"><span style="font-size:13px; line-height:1">🔇</span><span data-audio-label="1">Audio on</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <sc-if value="{{ active }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ close }}" style="position:fixed; inset:0; z-index:50; background:rgba(18,16,15,.82); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:clamp(16px,4vw,56px); animation:fadeUp .28s ease">
+      <div onClick="{{ stop }}" style="position:relative; background:#fff; width:min(1080px,100%); max-height:88vh; overflow-y:auto; padding:clamp(24px,4vw,64px)">
+        <button onClick="{{ close }}" aria-label="Schließen" style="position:absolute; top:16px; right:18px; width:40px; height:40px; border:0; background:none; cursor:pointer; font-size:26px; line-height:1; color:#111; font-family:inherit" style-hover="color:#b8552b">×</button>
+        <span style="display:block; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:#8d857c">{{ active.kicker }}</span>
+        <h3 style="margin:12px 0 22px; font-size:clamp(26px,4vw,48px); font-weight:500; letter-spacing:-.015em">{{ active.title }}</h3>
+        <div style="aspect-ratio:16/9; background:#ebe9e6; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; margin-bottom:26px">
+          <div style="width:48px; height:48px; border:1px solid #b3aca4"></div>
+          <div style="font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#8d857c">Platzhalter Bild / Video</div>
+        </div>
+        <p style="margin:0; max-width:60ch; font-size:clamp(15px,1.4vw,18px); line-height:1.65; font-weight:300; color:#3a3634; text-wrap:pretty">{{ active.body }}</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:26px">
+          <sc-for list="{{ active.tags }}" as="t" hint-placeholder-count="3">
+            <span style="border:1px solid #ddd8d2; padding:7px 14px; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#4a4643">{{ t }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+
+
+  <sc-if value="{{ showNandemoii }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:80; background:#fff; overflow-y:auto; animation:fadeUp .3s ease">
+      <div style="position:relative; max-width:1400px; margin:0 auto; padding:clamp(24px,4vw,64px) clamp(20px,4vw,64px) clamp(80px,12vh,160px)">
+        <div style="display:flex; align-items:center; justify-content:center; gap:clamp(16px,3vw,48px); padding:clamp(12px,2vw,32px) 0 clamp(28px,5vh,64px)">
+          <h2 style="margin:0; font-size:clamp(24px,4.4vw,58px); font-weight:600; letter-spacing:-.02em; text-align:center">NANDEMOII ai fashion brand</h2>
+          <button onClick="{{ closeModal }}" aria-label="Schließen" style="flex:none; width:clamp(40px,4.4vw,62px); height:clamp(40px,4.4vw,62px); border-radius:50%; border:3px solid #111; background:#fff; cursor:pointer; font-family:inherit; font-size:clamp(17px,2vw,26px); font-weight:600; line-height:1; color:#111; display:flex; align-items:center; justify-content:center" style-hover="background:#111; color:#fff">X</button>
+        </div>
+
+        <div style="position:relative; margin:0 auto clamp(48px,8vh,110px); max-width:1180px">
+          <video src="assets/Fashion-Video-Swim-Upstream.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" onVolumeChange="{{ syncAudioLabel }}" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#111"></video>
+          <button onClick="{{ toggleAudio }}" style="position:absolute; right:12px; top:12px; z-index:2; display:flex; align-items:center; gap:7px; border:0; cursor:pointer; font-family:inherit; background:rgba(17,17,17,.78); color:#fff; border-radius:999px; padding:8px 14px; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase" style-hover="background:#111"><span style="font-size:13px; line-height:1">🔇</span><span data-audio-label="1">Audio on</span></button>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-bottom:clamp(48px,8vh,110px)">
+          <img src="assets/nandemoii-outfit1-1.avif" alt="Outfit 1 links" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#dcdad7"></img>
+          <img src="assets/nandemoii-outfit1-2.avif" alt="Outfit 1 mitte" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#e9e7e4"></img>
+          <img src="assets/nandemoii-outfit1-3.avif" alt="Outfit 1 rechts" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#dcdad7"></img>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:clamp(24px,4vw,64px); max-width:1000px; margin:0 auto; align-items:start; justify-items:center">
+          <div style="width:100%; max-width:420px; display:flex; flex-direction:column; gap:12px">
+            <video src="assets/e-commerce-video.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" controls="{{ true }}" style="width:100%; height:auto; display:block; background:#111"></video>
+            <span style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#8d857c">E-Commerce Video</span>
+          </div>
+          <div style="width:100%; max-width:330px; display:flex; flex-direction:column; gap:12px">
+            <video src="assets/ucg-outfit1.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" controls="{{ true }}" style="width:100%; aspect-ratio:9/16; object-fit:cover; display:block; background:#111"></video>
+            <span style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#8d857c">UCG 9:16 Format</span>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin:clamp(48px,8vh,110px) 0">
+          <img src="assets/nandemoii-outfit2-1.avif" alt="Outfit 2 links" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#dcdad7"></img>
+          <img src="assets/nandemoii-outfit2-2.avif" alt="Outfit 2 mitte" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#e9e7e4"></img>
+          <img src="assets/nandemoii-outfit2-3.avif" alt="Outfit 2 rechts" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#dcdad7"></img>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:clamp(24px,4vw,64px); max-width:1000px; margin:0 auto clamp(60px,10vh,130px); align-items:start; justify-items:center">
+          <div style="width:100%; max-width:330px; display:flex; flex-direction:column; gap:12px">
+            <img src="assets/outfit-collage.avif" alt="Outfit Moodboard" style="width:100%; height:auto; display:block; background:#dcdad7"></img>
+            <span style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#8d857c">Outfit Moodboard (Photoshop)</span>
+          </div>
+          <div style="width:100%; max-width:330px; display:flex; flex-direction:column; gap:12px">
+            <video src="assets/ucg-outfit2.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" controls="{{ true }}" style="width:100%; aspect-ratio:9/16; object-fit:cover; display:block; background:#111"></video>
+            <span style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#8d857c">UCG 9:16 Format</span>
+          </div>
+        </div>
+      </div>
+
+      <img src="assets/nandemoii-heroimage.avif" alt="Nandemoii Hero" style="width:100%; aspect-ratio:1900/1000; object-fit:cover; display:block; background:#d6d8d5"></img>
+
+      <div style="max-width:1400px; margin:0 auto; padding:clamp(48px,8vh,110px) clamp(20px,4vw,64px) clamp(60px,10vh,140px)">
+        <h3 style="margin:0 0 clamp(40px,7vh,90px); text-align:center; font-size:clamp(28px,4.6vw,60px); font-weight:600; letter-spacing:-.02em">ai solution</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:clamp(32px,5vw,80px); align-items:start">
+          <div style="display:flex; flex-direction:column; gap:clamp(24px,3vw,44px)">
+            <div style="display:flex; flex-direction:column; gap:14px">
+              <div style="display:flex; justify-content:flex-end; gap:8px">
+                <sc-if value="{{ sol1Active }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ setSol1 }}" style="border:1px solid #111; background:#111; color:#fff; border-radius:999px; padding:7px 15px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer">OUTTAKE 1</button>
+                </sc-if>
+                <sc-if value="{{ sol1Off }}" hint-placeholder-val="{{ false }}">
+                  <button onClick="{{ setSol1 }}" style="border:1px solid #ddd9d5; background:transparent; color:#8d857c; border-radius:999px; padding:7px 15px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer" style-hover="border-color:#111; color:#111">OUTTAKE 1</button>
+                </sc-if>
+                <sc-if value="{{ sol2Active }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ setSol2 }}" style="border:1px solid #111; background:#111; color:#fff; border-radius:999px; padding:7px 15px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer">OUTTAKE 2</button>
+                </sc-if>
+                <sc-if value="{{ sol2Off }}" hint-placeholder-val="{{ false }}">
+                  <button onClick="{{ setSol2 }}" style="border:1px solid #ddd9d5; background:transparent; color:#8d857c; border-radius:999px; padding:7px 15px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer" style-hover="border-color:#111; color:#111">OUTTAKE 2</button>
+                </sc-if>
+                <sc-if value="{{ sol3Active }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ setSol3 }}" style="border:1px solid #111; background:#111; color:#fff; border-radius:999px; padding:7px 15px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer">OUTTAKE 3</button>
+                </sc-if>
+                <sc-if value="{{ sol3Off }}" hint-placeholder-val="{{ false }}">
+                  <button onClick="{{ setSol3 }}" style="border:1px solid #ddd9d5; background:transparent; color:#8d857c; border-radius:999px; padding:7px 15px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer" style-hover="border-color:#111; color:#111">OUTTAKE 3</button>
+                </sc-if>
+              </div>
+              <sc-if value="{{ sol1Active }}" hint-placeholder-val="{{ false }}">
+                <video src="assets/outtake1.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" controls="{{ true }}" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#111"></video>
+              </sc-if>
+              <sc-if value="{{ sol2Active }}" hint-placeholder-val="{{ false }}">
+                <video src="assets/outtake2.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" controls="{{ true }}" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#111"></video>
+              </sc-if>
+              <sc-if value="{{ sol3Active }}" hint-placeholder-val="{{ false }}">
+                <video src="assets/outtake3.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" controls="{{ true }}" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#111"></video>
+              </sc-if>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:14px">
+        <div style="display:flex; align-items:center; flex-wrap:wrap; gap:10px; border:1px solid #e4e1e6; border-radius:999px; padding:10px 22px 10px 10px">
+          <div style="display:flex; flex-wrap:wrap; gap:8px"><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">ChatGPT</span><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Midjourney</span><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Nano Banana</span></div>
+          <span style="font-size:clamp(12px,1.05vw,16px); font-weight:600; letter-spacing:-.01em; color:#111; margin-left:8px">concept &amp; image generation</span>
+        </div>
+        <div style="display:flex; align-items:center; flex-wrap:wrap; gap:10px; border:1px solid #e4e1e6; border-radius:999px; padding:10px 22px 10px 10px">
+          <div style="display:flex; flex-wrap:wrap; gap:8px"><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">RunwayML</span><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Seedance</span><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Midjourney</span></div>
+          <span style="font-size:clamp(12px,1.05vw,16px); font-weight:600; letter-spacing:-.01em; color:#111; margin-left:8px">video generation</span>
+        </div>
+        <div style="display:flex; align-items:center; flex-wrap:wrap; gap:10px; border:1px solid #e4e1e6; border-radius:999px; padding:10px 22px 10px 10px">
+          <div style="display:flex; flex-wrap:wrap; gap:8px"><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Suno</span><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">ElevenLabs</span></div>
+          <span style="font-size:clamp(12px,1.05vw,16px); font-weight:600; letter-spacing:-.01em; color:#111; margin-left:8px">audio &amp; music generation</span>
+        </div>
+        <div style="display:flex; align-items:center; flex-wrap:wrap; gap:10px; border:1px solid #e4e1e6; border-radius:999px; padding:10px 22px 10px 10px">
+          <div style="display:flex; flex-wrap:wrap; gap:8px"><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Adobe Premiere Pro</span><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">CapCut</span></div>
+          <span style="font-size:clamp(12px,1.05vw,16px); font-weight:600; letter-spacing:-.01em; color:#111; margin-left:8px">video cut</span>
+        </div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:clamp(20px,2.4vw,34px)">
+            <div style="display:flex; flex-direction:column; gap:10px">
+              <span style="font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#8d857c">Challenges</span>
+              <p style="margin:0; font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty">Die größte Hürde bei der Produktion des Fashion Films lag in einer komplexen visuellen Transition: Der Protagonist sollte sich nahtlos von einer urbanen Stadtszene in eine surreale („Impossible Reality“) Unterwasserwelt bewegen.</p>
+              <p style="margin:0; font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty">Dabei traten zwei wesentliche Probleme auf:</p>
+              <ul style="margin:0; padding-left:1.3em; display:flex; flex-direction:column; gap:8px">
+                <li style="font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty"><strong style="font-weight:600">Mangelnde Kamera-Kontrolle:</strong> Trotz intensiver Prompt-Versuche ließ sich die für den Übergang notwendige Kameradrehung in Midjourney und RunwayML nicht präzise genug steuern.</li>
+                <li style="font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty"><strong style="font-weight:600">Stilbrüche:</strong> Versuche, die Wasserwelt in der Stadt auftauchen zu lassen, wirkten unnatürlich und zerstörten den minimalistischen Look des Modevideos.</li>
+              </ul>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px">
+              <span style="font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#8d857c">Solutions</span>
+              <p style="margin:0; font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty">Um die wertvollen Generierungs-Credits effizient zu nutzen, habe ich mich gegen unkontrollierbares Prompt-Iterieren und für eine neue Schnittlösung entschieden:</p>
+              <ol style="margin:0; padding-left:1.3em; display:flex; flex-direction:column; gap:8px">
+                <li style="font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty">Ich ließ den Protagonisten kontrolliert nach hinten fallen.</li>
+                <li style="font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty"><strong style="font-weight:600">Der „Hard Cut“:</strong> Unmittelbar vor dem Aufprall auf den Boden erfolgt ein harter Schnitt, der die Spannung hält.</li>
+                <li style="font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty"><strong style="font-weight:600">Szenenwechsel &amp; Morphing:</strong> Der Schnitt führt direkt in eine neue, sauber generierte Sequenz, in der der Protagonist schwerelos unter Wasser schwebt. Ein anschließender, feiner Morph-Effekt leitet elegant in die finale Dialogszene über.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0; margin-top:clamp(48px,8vh,110px)">
+          <img src="assets/nadenmoii-scene-2.avif" alt="Nandemoii Szene 2" style="width:100%; height:auto; display:block; background:#dcdad7"></img>
+          <img src="assets/nadenmoii-scene-1.avif" alt="Nandemoii Szene 1" style="width:100%; height:auto; display:block; background:#d3d1ce"></img>
+        </div>
+
+        <div style="display:flex; justify-content:center; padding-top:clamp(48px,8vh,110px)">
+          <button onClick="{{ closeModal }}" style="border:0; cursor:pointer; font-family:inherit; background:#5257b0; color:#fff; border-radius:999px; padding:clamp(15px,1.8vw,24px) clamp(34px,5vw,68px); font-size:clamp(14px,1.5vw,24px); font-weight:600; letter-spacing:.04em; text-transform:uppercase" style-hover="background:#464b9e">Close</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showEggo }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:80; background:#fff; overflow-y:auto; animation:fadeUp .3s ease">
+      <div style="max-width:1400px; margin:0 auto; padding:clamp(24px,4vw,64px) clamp(20px,4vw,64px) 0">
+        <div style="display:flex; align-items:center; justify-content:center; gap:clamp(16px,3vw,48px); padding:clamp(12px,2vw,32px) 0 clamp(28px,5vh,64px)">
+          <h2 style="margin:0; font-size:clamp(24px,4.4vw,58px); font-weight:600; letter-spacing:-.02em; text-align:center">EGGO ai accessory</h2>
+          <button onClick="{{ closeModal }}" aria-label="Schließen" style="flex:none; width:clamp(40px,4.4vw,62px); height:clamp(40px,4.4vw,62px); border-radius:50%; border:3px solid #111; background:#fff; cursor:pointer; font-family:inherit; font-size:clamp(17px,1.9vw,26px); font-weight:700; line-height:1; color:#111; display:flex; align-items:center; justify-content:center" style-hover="background:#111; color:#fff">X</button>
+        </div>
+
+        <div style="max-width:1000px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:0; align-items:start">
+          <div style="display:flex; flex-direction:column; gap:0">
+            <img src="assets/eggo-1.avif" alt="Eggo 1" style="width:100%; aspect-ratio:9/16; object-fit:cover; display:block; background:#dcdad7"></img>
+            <img src="assets/eggo-3.avif" alt="Eggo 3" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; background:#e3e1de"></img>
+            <div style="display:flex; justify-content:center">
+              <div style="width:60%"><div style="position:relative"><video src="assets/eggo-story.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" onVolumeChange="{{ syncAudioLabel }}" style="width:100%; aspect-ratio:9/16; object-fit:cover; display:block; background:#111"></video><button onClick="{{ toggleAudio }}" style="position:absolute; right:12px; top:12px; z-index:2; display:flex; align-items:center; gap:7px; border:0; cursor:pointer; font-family:inherit; background:rgba(17,17,17,.78); color:#fff; border-radius:999px; padding:8px 14px; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase" style-hover="background:#111"><span style="font-size:13px; line-height:1">🔇</span><span data-audio-label="1">Audio on</span></button></div></div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:0">
+            <img src="assets/eggo-2.avif" alt="Eggo 2" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; background:#dcdad7"></img>
+            <img src="assets/eggo-4.avif" alt="Eggo 4" style="width:100%; aspect-ratio:585/832; object-fit:cover; display:block; background:#efedea"></img>
+            <img src="assets/eggo-5.avif" alt="Eggo 5" style="width:100%; aspect-ratio:585/832; object-fit:cover; display:block; background:#e3e1de"></img>
+          </div>
+        </div>
+
+        <div style="max-width:1000px; margin:0 auto clamp(60px,10vh,130px); display:grid; grid-template-columns:1fr 1fr; gap:0">
+          <div style="position:relative"><video src="assets/eggo-campaign-1.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" onVolumeChange="{{ syncAudioLabel }}" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block; background:#111"></video><button onClick="{{ toggleAudio }}" style="position:absolute; right:12px; top:12px; z-index:2; display:flex; align-items:center; gap:7px; border:0; cursor:pointer; font-family:inherit; background:rgba(17,17,17,.78); color:#fff; border-radius:999px; padding:8px 14px; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase" style-hover="background:#111"><span style="font-size:13px; line-height:1">🔇</span><span data-audio-label="1">Audio on</span></button></div>
+          <div style="position:relative"><video src="assets/eggo-campaign-2.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" onVolumeChange="{{ syncAudioLabel }}" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block; background:#111"></video><button onClick="{{ toggleAudio }}" style="position:absolute; right:12px; top:12px; z-index:2; display:flex; align-items:center; gap:7px; border:0; cursor:pointer; font-family:inherit; background:rgba(17,17,17,.78); color:#fff; border-radius:999px; padding:8px 14px; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase" style-hover="background:#111"><span style="font-size:13px; line-height:1">🔇</span><span data-audio-label="1">Audio on</span></button></div>
+        </div>
+      </div>
+
+      <div ref="{{ curtainRef }}" style="position:relative; width:100%; height:300vh">
+        <div style="position:sticky; top:0; height:100vh; overflow:hidden; background:#d6d8d5">
+          <img src="assets/sunglass-hd-1.avif" alt="Eggo Kampagnenmotiv 1" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block"></img>
+          <img data-curtain="1" src="assets/sunglass-hd-2.avif" alt="Eggo Kampagnenmotiv 2" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; clip-path:inset(100% 0 0 0)"></img>
+          <img data-curtain="2" src="assets/sunglass-hd-3.avif" alt="Eggo Kampagnenmotiv 3" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; clip-path:inset(100% 0 0 0)"></img>
+        </div>
+      </div>
+
+      <div style="max-width:1400px; margin:0 auto; padding:clamp(48px,8vh,110px) clamp(20px,4vw,64px) clamp(60px,10vh,140px)">
+        <h3 style="margin:0 0 clamp(40px,7vh,90px); text-align:center; font-size:clamp(28px,4.6vw,60px); font-weight:600; letter-spacing:-.02em">ai solution</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:clamp(32px,5vw,80px); align-items:start">
+          <div style="display:flex; flex-direction:column; gap:clamp(24px,3vw,44px)">
+            <div style="display:flex; flex-direction:column; gap:14px">
+              <div style="display:flex; justify-content:flex-end; flex-wrap:wrap; gap:8px">
+                <sc-if value="{{ eg1Active }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ setEg1 }}" style="border:1px solid #111; background:#111; color:#fff; border-radius:999px; padding:7px 15px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer">MIDJOURNEY</button>
+                </sc-if>
+                <sc-if value="{{ eg1Off }}" hint-placeholder-val="{{ false }}">
+                  <button onClick="{{ setEg1 }}" style="border:1px solid #ddd9d5; background:transparent; color:#8d857c; border-radius:999px; padding:7px 15px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer" style-hover="border-color:#111; color:#111">MIDJOURNEY</button>
+                </sc-if>
+                <sc-if value="{{ eg2Active }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ setEg2 }}" style="border:1px solid #111; background:#111; color:#fff; border-radius:999px; padding:7px 15px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer">ALEPH 2.0</button>
+                </sc-if>
+                <sc-if value="{{ eg2Off }}" hint-placeholder-val="{{ false }}">
+                  <button onClick="{{ setEg2 }}" style="border:1px solid #ddd9d5; background:transparent; color:#8d857c; border-radius:999px; padding:7px 15px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer" style-hover="border-color:#111; color:#111">ALEPH 2.0</button>
+                </sc-if>
+              </div>
+              <sc-if value="{{ eg1Active }}" hint-placeholder-val="{{ true }}">
+                <img src="assets/sunglass-midjourney.avif" alt="Midjourney Ergebnis" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#dcdad7"></img>
+              </sc-if>
+              <sc-if value="{{ eg2Active }}" hint-placeholder-val="{{ false }}">
+                <video src="assets/eggo-aleph-seedance.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" controls="{{ true }}" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#111"></video>
+              </sc-if>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:14px">
+              <div style="display:flex; align-items:center; flex-wrap:wrap; gap:10px; border:1px solid #e4e1e6; border-radius:999px; padding:10px 22px 10px 10px">
+                <div style="display:flex; flex-wrap:wrap; gap:8px"><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">ChatGPT</span><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Claude</span><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Midjourney</span></div>
+                <span style="font-size:clamp(12px,1.05vw,16px); font-weight:600; letter-spacing:-.01em; color:#111; margin-left:8px">concept &amp; image generation</span>
+              </div>
+              <div style="display:flex; align-items:center; flex-wrap:wrap; gap:10px; border:1px solid #e4e1e6; border-radius:999px; padding:10px 22px 10px 10px">
+                <div style="display:flex; flex-wrap:wrap; gap:8px"><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Nano Banana</span><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Photoshop</span></div>
+                <span style="font-size:clamp(12px,1.05vw,16px); font-weight:600; letter-spacing:-.01em; color:#111; margin-left:8px">product retouching</span>
+              </div>
+              <div style="display:flex; align-items:center; flex-wrap:wrap; gap:10px; border:1px solid #e4e1e6; border-radius:999px; padding:10px 22px 10px 10px">
+                <div style="display:flex; flex-wrap:wrap; gap:8px"><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Seedance</span><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">RunwayML</span><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">Midjourney</span></div>
+                <span style="font-size:clamp(12px,1.05vw,16px); font-weight:600; letter-spacing:-.01em; color:#111; margin-left:8px">video generation</span>
+              </div>
+              <div style="display:flex; align-items:center; flex-wrap:wrap; gap:10px; border:1px solid #e4e1e6; border-radius:999px; padding:10px 22px 10px 10px">
+                <div style="display:flex; flex-wrap:wrap; gap:8px"><span style="background:#ece9f0; border-radius:999px; padding:9px 16px; font-size:clamp(9px,.75vw,12px); font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#3a3634; white-space:nowrap">CapCut</span></div>
+                <span style="font-size:clamp(12px,1.05vw,16px); font-weight:600; letter-spacing:-.01em; color:#111; margin-left:8px">video cut</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:clamp(20px,2.4vw,34px)">
+            <div style="display:flex; flex-direction:column; gap:10px">
+              <span style="font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#8d857c">Challenges</span>
+              <p style="margin:0; font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty">Das visuelle Leitmotiv dieser Kampagne ist ein stilisierter menschlicher Kopf mit einer Sonnenbrille, der vollständig in einem transparenten, hochglänzenden Kunststoffblock eingeschlossen ist.</p>
+              <p style="margin:0; font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty">Die primäre Herausforderung bestand darin, konsistente Design-Variationen dieser Idee zu entwickeln (andere Gesichtsformen, neue Brillenmodelle), ohne dass die komplexe physikalische Ästhetik bricht.</p>
+              <ul style="margin:0; padding-left:1.3em; display:flex; flex-direction:column; gap:8px">
+                <li style="font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty"><strong style="font-weight:600">Die physikalische Hürde:</strong> Die Brille und das Gesicht müssen optisch korrekt innerhalb des Blocks liegen, inklusive realistischer Lichtbrechung (Refraktion) und Spiegelungen auf der Kunststoffoberfläche.</li>
+                <li style="font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty">Selbst unter Verwendung von Bild-zu-Bild-Referenzen (Style/Omni Reference) oder Inpainting-Editierfunktionen lieferte Midjourney keine brauchbaren Ergebnisse. Es zerstörte entweder die geometrische Struktur des Blocks oder veränderte das Brillendesign unkontrollierbar.</li>
+              </ul>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px">
+              <span style="font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#8d857c">Solutions</span>
+              <p style="margin:0; font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty">Anstatt Zeit in ineffizientes Prompt-Engineering in Midjourney zu investieren, habe ich einen gezielten Wechsel in der Tool-Pipeline vollzogen und auf die Stärken von RunwayML Aleph 2.0 gesetzt:</p>
+              <ol style="margin:0; padding-left:1.3em; display:flex; flex-direction:column; gap:8px">
+                <li style="font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty"><strong style="font-weight:600">Gezielter Element-Austausch:</strong> Da Aleph 2.0 die komplexe Geometrie und die Lichtphysik exakt beibehielt, konnte ich die inneren Elemente präzise variieren und austauschen.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:center; padding-top:clamp(48px,8vh,110px)">
+          <button onClick="{{ closeModal }}" style="border:0; cursor:pointer; font-family:inherit; background:#5257b0; color:#fff; border-radius:999px; padding:clamp(15px,1.8vw,24px) clamp(34px,5vw,68px); font-size:clamp(14px,1.5vw,24px); font-weight:600; letter-spacing:.04em; text-transform:uppercase" style-hover="background:#464b9e">Close</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showSerum }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:80; background:#fff; overflow-y:auto; animation:fadeUp .3s ease">
+      <div style="max-width:1400px; margin:0 auto; padding:clamp(24px,4vw,64px) clamp(20px,4vw,64px) 0">
+        <div style="display:flex; align-items:center; justify-content:center; gap:clamp(16px,3vw,48px); padding:clamp(12px,2vw,32px) 0 clamp(28px,5vh,64px)">
+          <h2 style="margin:0; font-size:clamp(24px,4.4vw,58px); font-weight:600; letter-spacing:-.02em; text-align:center">ai face serum</h2>
+          <button onClick="{{ closeModal }}" aria-label="Schließen" style="flex:none; width:clamp(40px,4.4vw,62px); height:clamp(40px,4.4vw,62px); border-radius:50%; border:3px solid #111; background:#fff; cursor:pointer; font-family:inherit; font-size:clamp(17px,1.9vw,26px); font-weight:700; line-height:1; color:#111; display:flex; align-items:center; justify-content:center" style-hover="background:#111; color:#fff">X</button>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0">
+          <img src="assets/ai-serum-skin.avif" alt="Serum Skin" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#dcdad7"></img>
+          <img src="assets/ai-serum.avif" alt="ai serum" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#e3e1de"></img>
+          <img src="assets/ai-aloevera.avif" alt="Aloe Vera" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#dcdad7"></img>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:clamp(32px,6vh,80px) 0 clamp(48px,8vh,110px)">
+          <div style="position:relative; width:100%; max-width:330px">
+            <video src="assets/serum-campaign.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" onVolumeChange="{{ syncAudioLabel }}" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block; background:#111"></video>
+            <button onClick="{{ toggleAudio }}" style="position:absolute; right:12px; top:12px; z-index:2; display:flex; align-items:center; gap:7px; border:0; cursor:pointer; font-family:inherit; background:rgba(17,17,17,.78); color:#fff; border-radius:999px; padding:8px 14px; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase" style-hover="background:#111"><span style="font-size:13px; line-height:1">🔇</span><span data-audio-label="1">Audio on</span></button>
+          </div>
+          <span style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#8d857c">Instagram Post</span>
+        </div>
+
+        <h3 style="margin:0 0 clamp(32px,5vh,64px); text-align:center; font-size:clamp(28px,4.6vw,60px); font-weight:600; letter-spacing:-.02em">ai solution</h3>
+
+        <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin-bottom:clamp(24px,4vh,44px)">
+            <sc-if value="{{ ph1Active }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ setPh1 }}" style="border:1px solid #111; background:#111; color:#fff; border-radius:999px; padding:8px 17px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; white-space:nowrap">Phase 1</button>
+            </sc-if>
+            <sc-if value="{{ ph1Off }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ setPh1 }}" style="border:1px solid #ddd9d5; background:transparent; color:#8d857c; border-radius:999px; padding:8px 17px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; white-space:nowrap" style-hover="border-color:#111; color:#111">Phase 1</button>
+            </sc-if>
+            <sc-if value="{{ ph2Active }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ setPh2 }}" style="border:1px solid #111; background:#111; color:#fff; border-radius:999px; padding:8px 17px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; white-space:nowrap">Phase 2</button>
+            </sc-if>
+            <sc-if value="{{ ph2Off }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ setPh2 }}" style="border:1px solid #ddd9d5; background:transparent; color:#8d857c; border-radius:999px; padding:8px 17px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; white-space:nowrap" style-hover="border-color:#111; color:#111">Phase 2</button>
+            </sc-if>
+            <sc-if value="{{ ph3Active }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ setPh3 }}" style="border:1px solid #111; background:#111; color:#fff; border-radius:999px; padding:8px 17px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; white-space:nowrap">Phase 3</button>
+            </sc-if>
+            <sc-if value="{{ ph3Off }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ setPh3 }}" style="border:1px solid #ddd9d5; background:transparent; color:#8d857c; border-radius:999px; padding:8px 17px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; white-space:nowrap" style-hover="border-color:#111; color:#111">Phase 3</button>
+            </sc-if>
+            <sc-if value="{{ ph4Active }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ setPh4 }}" style="border:1px solid #111; background:#111; color:#fff; border-radius:999px; padding:8px 17px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; white-space:nowrap">Phase 4</button>
+            </sc-if>
+            <sc-if value="{{ ph4Off }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ setPh4 }}" style="border:1px solid #ddd9d5; background:transparent; color:#8d857c; border-radius:999px; padding:8px 17px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; white-space:nowrap" style-hover="border-color:#111; color:#111">Phase 4</button>
+            </sc-if>
+            <sc-if value="{{ ph5Active }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ setPh5 }}" style="border:1px solid #111; background:#111; color:#fff; border-radius:999px; padding:8px 17px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; white-space:nowrap">Phase 5</button>
+            </sc-if>
+            <sc-if value="{{ ph5Off }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ setPh5 }}" style="border:1px solid #ddd9d5; background:transparent; color:#8d857c; border-radius:999px; padding:8px 17px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; white-space:nowrap" style-hover="border-color:#111; color:#111">Phase 5</button>
+            </sc-if>
+            <sc-if value="{{ ph6Active }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ setPh6 }}" style="border:1px solid #111; background:#111; color:#fff; border-radius:999px; padding:8px 17px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; white-space:nowrap">Phase 6</button>
+            </sc-if>
+            <sc-if value="{{ ph6Off }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ setPh6 }}" style="border:1px solid #ddd9d5; background:transparent; color:#8d857c; border-radius:999px; padding:8px 17px; font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; cursor:pointer; white-space:nowrap" style-hover="border-color:#111; color:#111">Phase 6</button>
+            </sc-if>
+        </div>
+
+        <div style="border-top:1px solid #e4e1e6; border-bottom:1px solid #e4e1e6">
+          <div style="padding:clamp(20px,3vh,32px) 0; border-bottom:1px solid #e4e1e6">
+            <h4 style="margin:0; font-size:clamp(18px,2.2vw,30px); font-weight:600; letter-spacing:-.015em">{{ phase.heading }}</h4>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(28px,4vw,60px); padding:clamp(28px,4vh,52px) 0">
+            <div style="width:100%; max-width:804px">
+              <sc-if value="{{ phasePair }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex; gap:0; width:100%">
+                  <div style="width:44.776%; aspect-ratio:360/554; background:#dcdad7 center/cover no-repeat; background-image:url({{ phase.imgL }})"></div>
+                  <div style="width:55.224%; aspect-ratio:444/554; background:#dcdad7 center/cover no-repeat; background-image:url({{ phase.imgR }})"></div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ phaseSingle }}" hint-placeholder-val="{{ false }}">
+                <div style="width:100%; aspect-ratio:804/499; background:#dcdad7 center/cover no-repeat; background-image:url({{ phase.imgL }})"></div>
+              </sc-if>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:clamp(18px,2.4vw,28px); align-self:center">
+              <sc-for list="{{ phase.rows }}" as="row" hint-placeholder-count="3">
+                <div style="display:flex; flex-direction:column; gap:7px">
+                  <span style="font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#8d857c">{{ row.label }}</span>
+                  <p style="margin:0; font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty">{{ row.text }}</p>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:center; padding:clamp(48px,8vh,110px) 0 clamp(60px,10vh,140px)">
+          <button onClick="{{ closeModal }}" style="border:0; cursor:pointer; font-family:inherit; background:#5257b0; color:#fff; border-radius:999px; padding:clamp(15px,1.8vw,24px) clamp(34px,5vw,68px); font-size:clamp(14px,1.5vw,24px); font-weight:600; letter-spacing:.04em; text-transform:uppercase" style-hover="background:#464b9e">Close</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showComfy }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:80; background:#fff; overflow-y:auto; animation:fadeUp .3s ease">
+      <div style="max-width:1400px; margin:0 auto; padding:clamp(24px,4vw,64px) clamp(20px,4vw,64px) 0">
+        <div style="display:flex; align-items:center; justify-content:center; gap:clamp(16px,3vw,48px); padding:clamp(12px,2vw,32px) 0 clamp(28px,5vh,64px)">
+          <h2 style="margin:0; font-size:clamp(24px,4.4vw,58px); font-weight:600; letter-spacing:-.02em; text-align:center">virtual try-on</h2>
+          <button onClick="{{ closeModal }}" aria-label="Schließen" style="flex:none; width:clamp(40px,4.4vw,62px); height:clamp(40px,4.4vw,62px); border-radius:50%; border:3px solid #111; background:#fff; cursor:pointer; font-family:inherit; font-size:clamp(17px,1.9vw,26px); font-weight:700; line-height:1; color:#111; display:flex; align-items:center; justify-content:center" style-hover="background:#111; color:#fff">X</button>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:10px; padding-bottom:clamp(18px,3vh,30px)">
+          <span style="font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#8d857c">ComfyUI Node Explorer</span>
+          <p style="margin:0; max-width:820px; font-size:clamp(14px,1.2vw,17px); line-height:1.6; font-weight:300; color:#3a3634; text-wrap:pretty">Für die effiziente Erstellung von E-Commerce-Assets nutze ich einen maßgeschneiderten Qwen Image Edit 2511 Workflow in ComfyUI, der bis zu drei unabhängige Referenzbilder (z.B. Model, Produkt und Pose/ Hintergrund) nativ verschmilzt. Zwei integrierte Edit Model Reference-Nodes injizieren die Texturen und Strukturen der Kleidung direkt in den Generierungsprozess. Dies garantiert die physikalische Konsistenz von Faltenwurf, Schatten und Lichtverhältnissen im latenten Raum. So entsteht eine reproduzierbare Pipeline für fotorealistische E-Commerce-Assets, die durch den Einsatz des lizenzfreien Qwen-Open-Weights-Modells volle kommerzielle Nutzungsfreiheit und maximale Datensicherheit auf eigenen Servern garantiert.</p>
+        </div>
+
+        <div style="border:1px solid #1c1c26; border-radius:14px; overflow:hidden; background:#0A0A0F; box-shadow:0 30px 80px -40px rgba(10,10,15,.6)">
+          <div style="display:flex; align-items:center; flex-wrap:wrap; gap:10px 18px; padding:12px 16px; background:linear-gradient(180deg,#14141c,#0e0e15); border-bottom:1px solid #23232f">
+            <div style="display:flex; align-items:center; gap:8px">
+              <span style="width:9px; height:9px; border-radius:50%; background:#5257b0; box-shadow:0 0 10px #5257b0"></span>
+              <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#e7e7f2">qwen_image_edit_2511_virtual_tryon.json</span>
+            </div>
+          </div>
+
+          <div style="position:relative">
+            <div onMouseDown="{{ panStart }}" style="position:relative; height:min(72vh,720px); overflow:auto; cursor:grab; background:#0A0A0F; background-image:radial-gradient(circle, rgba(120,120,180,.20) 1px, transparent 1.4px); background-size:20px 20px">
+              <div style="position:relative; width:{{ canvasW }}px; height:{{ canvasH }}px">
+                <div style="position:absolute; left:0; top:0; width:1800px; height:1330px; transform-origin:0 0; transform:scale({{ zoom }})">
+
+                <div style="position:absolute; left:20px; top:62px; width:346px; height:548px; border:1px solid rgba(110,140,255,.22); border-radius:10px; background:rgba(80,110,220,.06)">
+                  <span style="position:absolute; left:14px; top:-11px; padding:2px 8px; border-radius:5px; background:#111827; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#9fb4ff">Models</span>
+                </div>
+                <div style="position:absolute; left:20px; top:800px; width:576px; height:496px; border:1px solid rgba(110,140,255,.22); border-radius:10px; background:rgba(80,110,220,.06)">
+                  <span style="position:absolute; left:14px; top:-11px; padding:2px 8px; border-radius:5px; background:#111827; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#9fb4ff">Load Image</span>
+                </div>
+                <div style="position:absolute; left:410px; top:62px; width:390px; height:700px; border:1px solid rgba(110,140,255,.22); border-radius:10px; background:rgba(80,110,220,.06)">
+                  <span style="position:absolute; left:14px; top:-11px; padding:2px 8px; border-radius:5px; background:#111827; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#9fb4ff">Prompt</span>
+                </div>
+
+                <svg viewBox="0 0 1800 1330" style="position:absolute; inset:0; width:1800px; height:1330px; pointer-events:none; overflow:visible">
+                  <sc-for list="{{ comfyLinks }}" as="l" hint-placeholder-count="16">
+                    <path d="{{ l.d }}" fill="none" stroke="{{ l.color }}" stroke-width="2" stroke-opacity=".5" stroke-linecap="round"></path>
+                  </sc-for>
+                  <sc-for list="{{ comfyLinks }}" as="l" hint-placeholder-count="16">
+                    <path d="{{ l.d }}" fill="none" stroke="{{ l.color }}" stroke-width="3.4" stroke-linecap="round" stroke-dasharray="4 46" style="animation:noodle 2.2s linear infinite; filter:drop-shadow(0 0 5px currentColor)"></path>
+                  </sc-for>
+                </svg>
+
+                <sc-for list="{{ comfyNodes }}" as="n" hint-placeholder-count="16">
+                  <div style="position:absolute; left:{{ n.x }}px; top:{{ n.y }}px; width:{{ n.w }}px; border-radius:9px; overflow:hidden; background:rgba(22,22,30,.82); backdrop-filter:blur(8px); border:1px solid {{ n.border }}; box-shadow:{{ n.glow }}; transition:box-shadow .25s ease, border-color .25s ease">
+                    <div style="display:flex; align-items:center; gap:8px; padding:8px 11px; background:{{ n.titleBg }}; border-bottom:1px solid rgba(255,255,255,.06)">
+                      <span style="width:7px; height:7px; border-radius:50%; background:{{ n.accent }}; flex:none; box-shadow:0 0 8px {{ n.accent }}"></span>
+                      <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; font-weight:600; letter-spacing:.02em; color:#eaeaf5; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">{{ n.title }}</span>
+                    </div>
+                    <div style="padding:8px 0 10px">
+                      <sc-for list="{{ n.io }}" as="p" hint-placeholder-count="2">
+                        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; padding:2px 11px; min-height:16px">
+                          <div style="display:flex; align-items:center; gap:6px; min-width:0">
+                            <span style="width:7px; height:7px; border-radius:50%; background:{{ p.inColor }}; flex:none; margin-left:-15px"></span>
+                            <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; color:#9c9cb5">{{ p.in }}</span>
+                          </div>
+                          <div style="display:flex; align-items:center; gap:6px; min-width:0">
+                            <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; letter-spacing:.06em; color:#c8c8dd">{{ p.out }}</span>
+                            <span style="width:7px; height:7px; border-radius:50%; background:{{ p.outColor }}; flex:none; margin-right:-15px"></span>
+                          </div>
+                        </div>
+                      </sc-for>
+
+                      <sc-for list="{{ n.rows }}" as="r" hint-placeholder-count="2">
+                        <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin:5px 9px 0; padding:4px 9px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.06)">
+                          <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; color:#8b8ba6; white-space:nowrap">◄ {{ r.k }}</span>
+                          <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; color:#e4e4f2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{ r.v }} ►</span>
+                        </div>
+                      </sc-for>
+                      <sc-if value="{{ n.hasText }}" hint-placeholder-val="{{ false }}">
+                        <div style="margin:8px 9px 2px; padding:9px 10px; border-radius:6px; min-height:{{ n.textH }}px; background:rgba(8,8,12,.75); border:1px solid rgba(255,255,255,.07); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; line-height:1.55; color:#b9b9d0; text-wrap:pretty">{{ n.text }}</div>
+                      </sc-if>
+                    </div>
+                  </div>
+                </sc-for>
+
+                <div style="position:absolute; left:36px; top:830px; width:170px; border-radius:9px; overflow:hidden; background:rgba(22,22,30,.82); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.10); box-shadow:0 12px 30px -18px rgba(0,0,0,.9)">
+                  <div style="display:flex; align-items:center; gap:8px; padding:8px 11px; background:rgba(255,255,255,.05); border-bottom:1px solid rgba(255,255,255,.06)">
+                    <span style="width:7px; height:7px; border-radius:50%; background:#6fb7ff; flex:none; box-shadow:0 0 8px #6fb7ff"></span>
+                    <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; font-weight:600; color:#eaeaf5">Load Image</span>
+                  </div>
+                  <div style="padding:8px 0 10px">
+                    <div style="display:flex; align-items:center; justify-content:flex-end; gap:6px; padding:2px 11px; min-height:16px">
+                      <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; letter-spacing:.06em; color:#c8c8dd">IMAGE</span>
+                      <span style="width:7px; height:7px; border-radius:50%; background:#6fb7ff; flex:none; margin-right:-15px"></span>
+                    </div>
+                    <div style="display:flex; align-items:center; justify-content:flex-end; gap:6px; padding:2px 11px; min-height:16px">
+                      <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; letter-spacing:.06em; color:#c8c8dd">MASK</span>
+                      <span style="width:7px; height:7px; border-radius:50%; background:#8fe3c0; flex:none; margin-right:-15px"></span>
+                    </div>
+                    <div style="margin:6px 9px 2px; display:flex; flex-direction:column; gap:6px">
+                      <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; padding:4px 9px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.06)">
+                        <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#8b8ba6">◄ image</span>
+                        <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#e4e4f2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">model.avif ►</span>
+                      </div>
+                      <div style="padding:4px 8px; border-radius:5px; text-align:center; background:rgba(255,255,255,.07); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#9c9cb5">choose file to upload</div>
+                      <img src="assets/comfy-model.avif" alt="model.avif" style="width:100%; display:block; border-radius:4px; background:#0e0e15"></img>
+                      <span style="text-align:center; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#8b8ba6">1122 × 1042</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="position:absolute; left:220px; top:830px; width:170px; border-radius:9px; overflow:hidden; background:rgba(22,22,30,.82); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.10); box-shadow:0 12px 30px -18px rgba(0,0,0,.9)">
+                  <div style="display:flex; align-items:center; gap:8px; padding:8px 11px; background:rgba(255,255,255,.05); border-bottom:1px solid rgba(255,255,255,.06)">
+                    <span style="width:7px; height:7px; border-radius:50%; background:#6fb7ff; flex:none; box-shadow:0 0 8px #6fb7ff"></span>
+                    <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; font-weight:600; color:#eaeaf5">Load Image</span>
+                  </div>
+                  <div style="padding:8px 0 10px">
+                    <div style="display:flex; align-items:center; justify-content:flex-end; gap:6px; padding:2px 11px; min-height:16px">
+                      <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; letter-spacing:.06em; color:#c8c8dd">IMAGE</span>
+                      <span style="width:7px; height:7px; border-radius:50%; background:#6fb7ff; flex:none; margin-right:-15px"></span>
+                    </div>
+                    <div style="display:flex; align-items:center; justify-content:flex-end; gap:6px; padding:2px 11px; min-height:16px">
+                      <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; letter-spacing:.06em; color:#c8c8dd">MASK</span>
+                      <span style="width:7px; height:7px; border-radius:50%; background:#8fe3c0; flex:none; margin-right:-15px"></span>
+                    </div>
+                    <div style="margin:6px 9px 2px; display:flex; flex-direction:column; gap:6px">
+                      <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; padding:4px 9px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.06)">
+                        <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#8b8ba6">◄ image</span>
+                        <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#e4e4f2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">outfit-01.avif ►</span>
+                      </div>
+                      <div style="padding:4px 8px; border-radius:5px; text-align:center; background:rgba(255,255,255,.07); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#9c9cb5">choose file to upload</div>
+                      <img src="assets/comfy-outfit.avif" alt="outfit-01.avif" style="width:100%; display:block; border-radius:4px; background:#0e0e15"></img>
+                      <span style="text-align:center; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#8b8ba6">1080 × 1920</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="position:absolute; left:404px; top:830px; width:170px; border-radius:9px; overflow:hidden; background:rgba(22,22,30,.82); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.10); box-shadow:0 12px 30px -18px rgba(0,0,0,.9)">
+                  <div style="display:flex; align-items:center; gap:8px; padding:8px 11px; background:rgba(255,255,255,.05); border-bottom:1px solid rgba(255,255,255,.06)">
+                    <span style="width:7px; height:7px; border-radius:50%; background:#6fb7ff; flex:none; box-shadow:0 0 8px #6fb7ff"></span>
+                    <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; font-weight:600; color:#eaeaf5">Load Image</span>
+                  </div>
+                  <div style="padding:8px 0 10px">
+                    <div style="display:flex; align-items:center; justify-content:flex-end; gap:6px; padding:2px 11px; min-height:16px">
+                      <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; letter-spacing:.06em; color:#c8c8dd">IMAGE</span>
+                      <span style="width:7px; height:7px; border-radius:50%; background:#6fb7ff; flex:none; margin-right:-15px"></span>
+                    </div>
+                    <div style="display:flex; align-items:center; justify-content:flex-end; gap:6px; padding:2px 11px; min-height:16px">
+                      <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; letter-spacing:.06em; color:#c8c8dd">MASK</span>
+                      <span style="width:7px; height:7px; border-radius:50%; background:#8fe3c0; flex:none; margin-right:-15px"></span>
+                    </div>
+                    <div style="margin:6px 9px 2px; display:flex; flex-direction:column; gap:6px">
+                      <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; padding:4px 9px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.06)">
+                        <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#8b8ba6">◄ image</span>
+                        <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#e4e4f2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">standing_02.avif ►</span>
+                      </div>
+                      <div style="padding:4px 8px; border-radius:5px; text-align:center; background:rgba(255,255,255,.07); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#9c9cb5">choose file to upload</div>
+                      <img src="assets/comfy-standing.avif" alt="standing_02.avif" style="width:100%; display:block; border-radius:4px; background:#0e0e15"></img>
+                      <span style="text-align:center; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#8b8ba6">768 × 768</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="position:absolute; left:1130px; top:400px; width:252px; border-radius:9px; overflow:hidden; background:rgba(22,22,30,.82); border:1px solid rgba(255,255,255,.10)">
+                  <div style="display:flex; align-items:center; gap:8px; padding:8px 11px; background:rgba(255,255,255,.05); border-bottom:1px solid rgba(255,255,255,.06)">
+                    <span style="width:7px; height:7px; border-radius:50%; background:#8fe3c0; flex:none; box-shadow:0 0 8px #8fe3c0"></span>
+                    <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; font-weight:600; color:#eaeaf5">KSampler Settings</span>
+                  </div>
+                  <div style="padding:10px 11px 12px; display:flex; flex-direction:column; gap:9px">
+                    <div style="display:grid; grid-template-columns:52px 1fr 1fr 1fr; gap:1px; background:rgba(255,255,255,.08); border-radius:5px; overflow:hidden; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px">
+                      <span style="padding:5px 6px; background:#12121a; color:#8b8ba6"></span>
+                      <span style="padding:5px 6px; background:#12121a; color:#c8c8dd">Qwen</span>
+                      <span style="padding:5px 6px; background:#12121a; color:#c8c8dd">Comfy</span>
+                      <span style="padding:5px 6px; background:#12121a; color:#f0d868">Lightning</span>
+                      <span style="padding:5px 6px; background:#0e0e15; color:#8b8ba6">Steps</span>
+                      <span style="padding:5px 6px; background:#0e0e15; color:#e4e4f2">40</span>
+                      <span style="padding:5px 6px; background:#0e0e15; color:#e4e4f2">20</span>
+                      <span style="padding:5px 6px; background:#0e0e15; color:#8fe3c0">4</span>
+                      <span style="padding:5px 6px; background:#0e0e15; color:#8b8ba6">CFG</span>
+                      <span style="padding:5px 6px; background:#0e0e15; color:#e4e4f2">4.0</span>
+                      <span style="padding:5px 6px; background:#0e0e15; color:#e4e4f2">4.0</span>
+                      <span style="padding:5px 6px; background:#0e0e15; color:#8fe3c0">1.0</span>
+                    </div>
+                    <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; line-height:1.6; color:#8b8ba6">4 steps for Lightning LoRA at CFG 1.0 // 20 steps for standard Euler.</span>
+                  </div>
+                </div>
+
+                <div style="position:absolute; left:1420px; top:200px; width:340px; border-radius:9px; overflow:hidden; background:rgba(22,22,30,.86); border:1px solid rgba(143,227,192,.35); box-shadow:0 0 40px -8px rgba(143,227,192,.35)">
+                  <div style="display:flex; align-items:center; gap:8px; padding:8px 11px; background:rgba(143,227,192,.10); border-bottom:1px solid rgba(255,255,255,.06)">
+                    <span style="width:7px; height:7px; border-radius:50%; background:#8fe3c0; flex:none; box-shadow:0 0 8px #8fe3c0"></span>
+                    <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; font-weight:600; color:#eaeaf5">Save Image</span>
+                  </div>
+                  <div style="padding:10px; display:flex; flex-direction:column; gap:7px">
+                    <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; padding:4px 9px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.06)">
+                      <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#8b8ba6">◄ filename_prefix</span>
+                      <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#e4e4f2">ComfyUI ►</span>
+                    </div>
+                    <img src="assets/comfy-result.avif" alt="Final Render Virtual Try-On" style="width:100%; display:block; border-radius:6px; background:#0e0e15"></img>
+                    <span style="text-align:center; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:9px; color:#8b8ba6">ComfyUI_00002_.png</span>
+                  </div>
+                </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div style="position:absolute; left:14px; bottom:14px; display:flex; align-items:center; gap:6px; padding:6px; border-radius:999px; background:rgba(18,18,26,.9); border:1px solid rgba(255,255,255,.10); backdrop-filter:blur(6px)">
+              <button onClick="{{ zoomOut }}" aria-label="Zoom out" style="width:30px; height:30px; border-radius:50%; border:1px solid rgba(255,255,255,.14); background:transparent; color:#e4e4f2; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:14px; cursor:pointer" style-hover="background:rgba(255,255,255,.12)">−</button>
+              <span style="min-width:44px; text-align:center; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; color:#c8c8dd">{{ zoomPct }}</span>
+              <button onClick="{{ zoomIn }}" aria-label="Zoom in" style="width:30px; height:30px; border-radius:50%; border:1px solid rgba(255,255,255,.14); background:transparent; color:#e4e4f2; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:14px; cursor:pointer" style-hover="background:rgba(255,255,255,.12)">+</button>
+              <button onClick="{{ zoomReset }}" style="padding:0 12px; height:30px; border-radius:999px; border:1px solid rgba(255,255,255,.14); background:transparent; color:#9c9cb5; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; cursor:pointer" style-hover="background:rgba(255,255,255,.12); color:#fff">Reset view</button>
+            </div>
+
+          </div>
+
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:10px 16px; background:#0e0e15; border-top:1px solid #23232f">
+            <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; letter-spacing:.08em; color:#7c7c95">16 Nodes · 4 Stages · Qwen-Image-Edit 2511 + Lightning 4-Step LoRA</span>
+            <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; letter-spacing:.08em; color:#7c7c95">Drag to pan · Zoom über die Regler unten links</span>
+          </div>
+        </div>
+
+
+        <div style="margin:clamp(56px,9vh,120px) 0 0">
+          <h3 style="margin:0 0 clamp(24px,4vh,48px); font-size:clamp(20px,2.6vw,36px); font-weight:600; letter-spacing:-.015em">Qwen Multiple Angle Workflow Result</h3>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0">
+          <img src="assets/model-angle-left.avif" alt="Model Angle links" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#dcdad7"></img>
+          <img src="assets/model-angle-front.avif" alt="Model Angle front" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#e3e1de"></img>
+          <img src="assets/model-angle-right.avif" alt="Model Angle rechts" style="aspect-ratio:585/916; width:100%; height:100%; object-fit:cover; display:block; background:#dcdad7"></img>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:center; padding:clamp(48px,8vh,110px) 0 clamp(60px,10vh,140px)">
+          <button onClick="{{ closeModal }}" style="border:0; cursor:pointer; font-family:inherit; background:#5257b0; color:#fff; border-radius:999px; padding:clamp(15px,1.8vw,24px) clamp(34px,5vw,68px); font-size:clamp(14px,1.5vw,24px); font-weight:600; letter-spacing:.04em; text-transform:uppercase" style-hover="background:#464b9e">Close</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showImpressum }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:80; background:#fff; overflow-y:auto; animation:fadeUp .3s ease">
+      <div style="max-width:820px; margin:0 auto; padding:clamp(24px,4vw,64px) clamp(20px,4vw,64px) clamp(60px,10vh,140px)">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:clamp(12px,2vw,32px) 0 clamp(20px,4vh,44px)">
+          <span style="font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#8d857c">Rechtliches</span>
+          <button onClick="{{ closeModal }}" aria-label="Schließen" style="flex:none; width:clamp(40px,4.4vw,62px); height:clamp(40px,4.4vw,62px); border-radius:50%; border:3px solid #111; background:#fff; cursor:pointer; font-family:inherit; font-size:clamp(17px,1.9vw,26px); font-weight:700; line-height:1; color:#111; display:flex; align-items:center; justify-content:center" style-hover="background:#111; color:#fff">X</button>
+        </div>
+        <h2 style="margin:0 0 8px; font-size:clamp(24px,3.4vw,44px); font-weight:600; letter-spacing:-.02em">Impressum &amp; Datenschutzerklärung</h2>
+        <h3 style="margin:clamp(34px,5vh,54px) 0 14px; font-size:clamp(18px,2vw,26px); font-weight:600; letter-spacing:-.01em; color:#111">Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)</h3>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty"><strong style="font-weight:600">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</strong><br></br>Sylvia Trieu</p>
+        <div style="height:1px; background:#eceae7; margin:clamp(30px,4vh,48px) 0"></div>
+        <h3 style="margin:clamp(34px,5vh,54px) 0 14px; font-size:clamp(18px,2vw,26px); font-weight:600; letter-spacing:-.01em; color:#111">Offenlegung zu Technologie &amp; Inhalten</h3>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Dieses Portfolio versteht sich als experimenteller und kreativer Showroom. Das strukturelle Webdesign und die Code-Architektur wurden in kollaborativer Arbeit mit der KI <strong style="font-weight:600">Claude (Anthropic)</strong> entwickelt.</p>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Sämtliche auf dieser Website präsentierten visuellen Arbeiten (Bilder, Videos) sowie akustischen Medien (Musik, Soundtracks, Stimmen) sind vollständig <strong style="font-weight:600">synthetisch / generativ mittels künstlicher Intelligenz</strong> (u.&nbsp;a. Midjourney, Stable Diffusion/ComfyUI, Runway, Suno und ElevenLabs) erzeugt worden.</p>
+        <div style="height:1px; background:#eceae7; margin:clamp(30px,4vh,48px) 0"></div>
+        <h2 style="margin:0 0 8px; font-size:clamp(22px,3vw,38px); font-weight:600; letter-spacing:-.02em">Datenschutzerklärung</h2>
+        <h3 style="margin:clamp(34px,5vh,54px) 0 14px; font-size:clamp(18px,2vw,26px); font-weight:600; letter-spacing:-.01em; color:#111">1. Datenschutz auf einen Blick</h3>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten auf dieser Webseite auf. Da diese Seite als rein statisches Bewerbungsportfolio betrieben wird, werden von mir persönlich <strong style="font-weight:600">keine Cookies gesetzt, keine Tracking-Tools verwendet und keinerlei personenbezogene Daten aktiv erhoben oder gespeichert</strong>.</p>
+        <h3 style="margin:clamp(34px,5vh,54px) 0 14px; font-size:clamp(18px,2vw,26px); font-weight:600; letter-spacing:-.01em; color:#111">2. Hosting durch GitHub Pages</h3>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Dieses Portfolio wird als statische Seite über den Dienst <strong style="font-weight:600">GitHub Pages</strong> gehostet, bereitgestellt von GitHub, Inc. (88 Colin P. Kelly Jr. St, San Francisco, CA 94107, USA).</p>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Beim Aufruf dieser Webseite erfasst GitHub automatisch sogenannte Log-Files (darunter Ihre IP-Adresse, Browsertyp, Betriebssystem, Datum und Uhrzeit des Abrufs sowie die zuvor besuchte Seite). Dies ist technisch zwingend erforderlich, um die Auslieferung der Webseite zu gewährleisten und die Sicherheit und Stabilität des Webservers zu garantieren.</p>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty"><strong style="font-weight:600">Rechtsgrundlage:</strong> Die Datenverarbeitung erfolgt auf Grundlage von <strong style="font-weight:600">Art. 6 Abs. 1 lit. f DSGVO</strong> (berechtigtes Interesse an einem fehlerfreien und sicheren Betrieb der Webseite).</p>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">GitHub verarbeitet diese Daten unter Einhaltung der <strong style="font-weight:600">EU-Standardvertragsklauseln (SCCs)</strong>, um ein angemessenes Datenschutzniveau bei der Datenübertragung in die USA zu sichern. Weitere Details finden Sie in der <strong style="font-weight:600">GitHub Privacy Statement</strong> (unter docs.github.com).</p>
+        <h3 style="margin:clamp(34px,5vh,54px) 0 14px; font-size:clamp(18px,2vw,26px); font-weight:600; letter-spacing:-.01em; color:#111">3. Ihre Rechte als betroffene Person</h3>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Sie haben das Recht:</p>
+        <ul style="margin:0; padding-left:1.3em; display:flex; flex-direction:column; gap:10px">
+          <li style="font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Auskunft über Ihre bei uns (bzw. dem Hoster) verarbeiteten Daten zu verlangen (<strong style="font-weight:600">Art. 15 DSGVO</strong>).</li>
+          <li style="font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Die Berichtigung oder Vervollständigung unrichtiger Daten zu verlangen (<strong style="font-weight:600">Art. 16 DSGVO</strong>).</li>
+          <li style="font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Die Löschung Ihrer gespeicherten Daten zu verlangen, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen (<strong style="font-weight:600">Art. 17 DSGVO</strong>).</li>
+          <li style="font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung zu beschweren (<strong style="font-weight:600">Art. 77 DSGVO</strong>).</li>
+        </ul>
+        <div style="height:1px; background:#eceae7; margin:clamp(30px,4vh,48px) 0"></div>
+        <h3 style="margin:clamp(34px,5vh,54px) 0 14px; font-size:clamp(18px,2vw,26px); font-weight:600; letter-spacing:-.01em; color:#111">Transparenzhinweis nach Art. 50 EU AI Act</h3>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Zur Einhaltung der europäischen KI-Verordnung (AI Act) wird hiermit ausdrücklich deklariert:</p>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Die auf dieser Webpräsenz gezeigten <strong style="font-weight:600">E-Commerce-Assets, Produktplatzierungen, Avatare, Modepräsentationen, Teaser-Videos und Musikkompositionen sind synthetische Medien</strong>.</p>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Sie stellen <strong style="font-weight:600">keine real existierenden Produkte oder Personen</strong> dar.</p>
+        <p style="margin:0 0 14px; font-size:clamp(14px,1.15vw,17px); line-height:1.7; font-weight:300; color:#3a3634; text-wrap:pretty">Alle Inhalte wurden unter Einsatz generativer KI-Modelle durch <strong style="font-weight:600">Sylvia Trieu</strong> kuratiert, gesteuert und finalisiert.</p>
+        <div style="display:flex; justify-content:center; padding-top:clamp(48px,8vh,110px)">
+          <button onClick="{{ closeModal }}" style="border:0; cursor:pointer; font-family:inherit; background:#5257b0; color:#fff; border-radius:999px; padding:clamp(15px,1.8vw,24px) clamp(34px,5vw,68px); font-size:clamp(14px,1.5vw,24px); font-weight:600; letter-spacing:.04em; text-transform:uppercase" style-hover="background:#464b9e">Close</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <footer style="padding:38px clamp(20px,5vw,88px) 54px; border-top:1px solid #eceae7; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#8d857c">
+    <span>Sylvia Trieu</span>
+    <button onClick="{{ openImpressum }}" style="border:0; background:none; padding:0; cursor:pointer; font-family:inherit; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#8d857c" style-hover="color:#111">Impressum &amp; Datenschutz</button>
+    <span>Portfolio 2026</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { active: null, feature: 0, modal: null, reelPlaying: false };
+  constructor(p) {
+    super(p);
+    this.parallaxRef = React.createRef();
+    this.heroTextRef = React.createRef();
+    this.curtainRef = React.createRef();
+    this.songRef = React.createRef();
+    this.onCurtain = () => {
+      const el = this.curtainRef.current;
+      if (!el) return;
+      const sc = this.curtainScroller;
+      const vh = sc && sc !== window ? sc.clientHeight : window.innerHeight;
+      const top = el.getBoundingClientRect().top - (sc && sc !== window ? sc.getBoundingClientRect().top : 0);
+      const p = Math.min(Math.max(-top / (el.offsetHeight - vh || 1), 0), 1) * 2;
+      el.querySelectorAll('[data-curtain]').forEach((img) => {
+        const i = Number(img.getAttribute('data-curtain'));
+        const t = Math.min(Math.max(p - (i - 1), 0), 1);
+        img.style.clipPath = 'inset(' + ((1 - t) * 100).toFixed(2) + '% 0 0 0)';
+      });
+    };
+    this.onScroll = () => {
+      const y = window.scrollY || 0;
+      if (this.parallaxRef.current) this.parallaxRef.current.style.transform = `translate3d(0,${y * 0.4}px,0)`;
+      if (this.heroTextRef.current) {
+        this.heroTextRef.current.style.transform = `translate3d(0,${y * 0.12}px,0)`;
+        this.heroTextRef.current.style.opacity = String(Math.max(0, 1 - y / (window.innerHeight * 0.8)));
+      }
+    };
+  }
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+    const v = document.querySelector('video');
+    if (v) { v.muted = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    this.onKey = (e) => {
+      if (e.key !== 'Escape') return;
+      if (this.state.modal) { this.closeModal(); } else { this.setState({ active: null }); }
+    };
+    window.addEventListener('keydown', this.onKey);
+    this.readSongDuration();
+  }
+  componentDidUpdate() { this.syncCurtain(); this.readSongDuration(); }
+  readSongDuration() {
+    const a = this.songRef.current;
+    if (!a || this.state.songDur) return;
+    if (a.readyState >= 1 && a.duration) { this.setState({ songDur: a.duration }); return; }
+    if (this.songMetaBound) return;
+    this.songMetaBound = true;
+    a.addEventListener('loadedmetadata', () => this.setState({ songDur: a.duration || 0 }), { once: true });
+  }
+  syncCurtain() {
+    const el = this.curtainRef.current;
+    if (!el) {
+      if (this.curtainScroller) { this.curtainScroller.removeEventListener('scroll', this.onCurtain); this.curtainScroller = null; }
+      return;
+    }
+    let sc = el.parentElement;
+    while (sc && sc !== document.body) {
+      const oy = getComputedStyle(sc).overflowY;
+      if (oy === 'auto' || oy === 'scroll') break;
+      sc = sc.parentElement;
+    }
+    sc = sc && sc !== document.body ? sc : window;
+    if (this.curtainScroller === sc) { this.onCurtain(); return; }
+    if (this.curtainScroller) this.curtainScroller.removeEventListener('scroll', this.onCurtain);
+    this.curtainScroller = sc;
+    sc.addEventListener('scroll', this.onCurtain, { passive: true });
+    this.onCurtain();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('keydown', this.onKey);
+    if (this.curtainScroller) this.curtainScroller.removeEventListener('scroll', this.onCurtain);
+  }
+  solBtn(i) {
+    const on = (this.state.solVideo || 0) === i;
+    return {
+      border: on ? '1px solid #111' : '1px solid #ddd9d5',
+      background: on ? '#111' : 'transparent',
+      color: on ? '#fff' : '#8d857c',
+      borderRadius: '999px',
+      padding: '7px 15px',
+      fontFamily: 'inherit',
+      fontSize: '11px',
+      fontWeight: 600,
+      letterSpacing: '.14em',
+      textTransform: 'uppercase',
+      cursor: 'pointer',
+      transition: 'all .2s ease'
+    };
+  }
+
+  static PHASES = [
+    { label: '01', heading: 'Phase 1 – Erste Ideengenerierung', imgL: 'images/skincare/produktentwicklung-phase1-2.avif', imgR: 'images/skincare/produktentwicklung-phase1.avif', rows: [
+      { label: 'Tool', text: 'ChatGPT' },
+      { label: 'The Mission', text: 'Brainstorming des Verpackungsdesigns & erste Formfindung.' },
+      { label: 'The Pain Point', text: 'Mangelnde Materialtiefe. Trotz mehrfacher Prompt-Iterationen wird der gewünschte „Glossy Wax“-Effekt nicht physisch korrekt dargestellt. Die Reflexionen auf dem Glas wirken flach, künstlich und unpräzise.' }
+    ] },
+    { label: '02', heading: 'Phase 2 – Der visuelle Durchbruch', imgL: 'images/skincare/produktentwicklung-phase2-2.avif', imgR: 'images/skincare/produktentwicklung-phase2-1.avif', rows: [
+      { label: 'Tool', text: 'Midjourney v7' },
+      { label: 'The Action', text: 'Übertrag der textlichen ChatGPT-Konzepte in einen Midjourney-Prompt.' },
+      { label: 'The Gain', text: 'Physikalischer Realismus. Der anspruchsvolle „Glossy Wax“-Effekt wird fehlerfrei übersetzt – inklusive fotorealistischer Lichtbrechung.' }
+    ] },
+    { label: '03', heading: 'Phase 3 – Die Proportions-Anpassung', imgL: 'images/skincare/produktentwicklung-phase3-2.avif', imgR: 'images/skincare/produktentwicklung-phase3-1.avif', rows: [
+      { label: 'Tool', text: 'ChatGPT' },
+      { label: 'The Action', text: 'Re-Import des Midjourney-Renderings in ChatGPT, um die geometrischen Proportionen der Flasche schnell zu testen.' },
+      { label: 'The Gain', text: 'Ressourceneffizienz. Schnelle Iterationsschleifen, ohne wertvolle Credits in Midjourney für einfache geometrische Verschiebungen aufzubrauchen.' }
+    ] },
+    { label: '04', heading: 'Phase 4 – Entwicklung von Variationen', single: true, imgL: 'images/skincare/produktentwicklung-phase4.avif', rows: [
+      { label: 'Tool', text: 'ChatGPT' },
+      { label: 'The Action', text: 'KI-gestützte Exploration alternativer Design-Varianten basierend auf der bereinigten Bildreferenz aus Phase 3.' },
+      { label: 'The Gain', text: 'Kreative Breite. Schnelle Erstellung einer kontrastreichen Palette.' }
+    ] },
+    { label: '05', heading: 'Phase 5 – Produktisolierung & Detail-Feinschliff', imgL: 'images/skincare/produktentwicklung-phase5-2.avif', imgR: 'images/skincare/produktentwicklung-phase5-1.avif', rows: [
+      { label: 'Tool', text: 'ChatGPT' },
+      { label: 'The Action', text: 'Fokussierung auf einen ausgewählten Design-Favoriten. Gezielte Materialkorrektur des Serum-Spenders (Wechsel von hartem Plastik zu einem edlen, matten Rubber-Material).' }
+    ] },
+    { label: '06', heading: 'Phase 6 – Der finale Produkt-Shot', imgL: 'images/skincare/produktentwicklung-phase6-2.avif', imgR: 'images/skincare/produktentwicklung-phase6-1.avif', rows: [
+      { label: 'Tool', text: 'Midjourney v7' },
+      { label: 'The Action', text: 'Finales High-End-Rendering in Midjourney unter Verwendung des Entwurfs aus Phase 5 und weiterer KI-generierter Mood-Bilder als präzise Bild- und Stilreferenz.' },
+      { label: 'The Gain', text: 'High-Fashion-Ästhetik.' }
+    ] }
+  ];
+
+  startPan(e) {
+    const box = e.currentTarget;
+    if (e.button !== 0) return;
+    const sx = e.clientX, sy = e.clientY, l = box.scrollLeft, t = box.scrollTop;
+    box.style.cursor = 'grabbing';
+    const move = (ev) => { box.scrollLeft = l - (ev.clientX - sx); box.scrollTop = t - (ev.clientY - sy); };
+    const up = () => { box.style.cursor = 'grab'; window.removeEventListener('mousemove', move); window.removeEventListener('mouseup', up); };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+  }
+
+  openModal(name, extra) {
+    this.savedScroll = window.scrollY || document.documentElement.scrollTop || 0;
+    this.setState(Object.assign({ modal: name, reelPlaying: false }, extra || {}));
+    document.body.style.overflow = 'hidden';
+  }
+
+  fmtTime(s) {
+    if (!isFinite(s) || s < 0) s = 0;
+    const m = Math.floor(s / 60);
+    const r = Math.floor(s % 60);
+    return m + ':' + (r < 10 ? '0' : '') + r;
+  }
+
+  closeModal() {
+    const y = this.savedScroll || 0;
+    this.setState({ modal: null, reelPlaying: false });
+    document.body.style.overflow = '';
+    requestAnimationFrame(() => window.scrollTo(0, y));
+  }
+
+
+  static C = { model: '#b57bff', clip: '#f0d868', vae: '#ff6b6b', image: '#6fb7ff', cond: '#ff9f45', latent: '#ff7bd5', out: '#8fe3c0', none: 'rgba(255,255,255,.22)' };
+
+  static NODES = [
+    { id: 'unet', title: 'Load Diffusion Model', accent: '#b57bff', x: 36, y: 92, w: 314,
+      io: [{ out: 'MODEL', outColor: '#b57bff' }],
+      rows: [{ k: 'unet_name', v: 'qwen_image_edit_2511_bf16' }, { k: 'weight_dtype', v: 'default' }] },
+    { id: 'lora', title: 'Load LoRA', accent: '#b57bff', key: 'lora', x: 36, y: 216, w: 314,
+      io: [{ in: 'model', inColor: '#b57bff', out: 'MODEL', outColor: '#b57bff' }],
+      rows: [{ k: 'lora_name', v: 'Qwen-…-Lightning-4steps-v1.0' }, { k: 'strength_model', v: '1.00' }] },
+    { id: 'clip', title: 'Load CLIP', accent: '#f0d868', key: 'clip', x: 36, y: 340, w: 314,
+      io: [{ out: 'CLIP', outColor: '#f0d868' }],
+      rows: [{ k: 'clip_name', v: 'qwen_2.5_vl_7b_fp8_scaled' }, { k: 'type', v: 'qwen_image' }, { k: 'device', v: 'default' }] },
+    { id: 'vae', title: 'Load VAE', accent: '#ff6b6b', x: 36, y: 500, w: 314,
+      io: [{ out: 'VAE', outColor: '#ff6b6b' }],
+      rows: [{ k: 'vae_name', v: 'qwen_image_vae.safetensors' }] },
+    { id: 'pos', title: 'TextEncodeQwenImageEditPlus', accent: '#8fe3c0', x: 426, y: 92, w: 356,
+      io: [{ in: 'clip', inColor: '#f0d868', out: 'CONDITIONING', outColor: '#ff9f45' }, { in: 'vae', inColor: '#ff6b6b' }, { in: 'image1', inColor: '#6fb7ff' }, { in: 'image2', inColor: '#6fb7ff' }, { in: 'image3', inColor: '#6fb7ff' }],
+      text: 'e-commerce shot of a female model wearing an oversized cropped puffer jacket, black T-shirt underneath, wide-leg white trousers and black rounded platform shoes. Minimalist seamless light-gray background', textH: 120 },
+    { id: 'neg', title: 'TextEncodeQwenImageEditPlus', accent: '#ff6b6b', x: 426, y: 440, w: 356,
+      io: [{ in: 'clip', inColor: '#f0d868', out: 'CONDITIONING', outColor: '#ff9f45' }, { in: 'vae', inColor: '#ff6b6b' }, { in: 'image1', inColor: '#6fb7ff' }, { in: 'image2', inColor: '#6fb7ff' }, { in: 'image3', inColor: '#6fb7ff' }],
+      text: 'bad anatomy, extra limbs, missing fingers, fused fingers, distorted face, asymmetrical eyes, unnatural skin texture, plastic skin, harsh makeup, oversharpened, inconsistent lighting, strange shadows, over-smoothed skin, doll face, loss of skin detail', textH: 86 },
+    { id: 'aura', title: 'ModelSamplingAuraFlow', accent: '#b57bff', x: 830, y: 92, w: 252,
+      io: [{ in: 'model', inColor: '#b57bff', out: 'MODEL', outColor: '#b57bff' }], rows: [{ k: 'shift', v: '3.10' }] },
+    { id: 'cfg', title: 'CFGNorm', accent: '#b57bff', x: 830, y: 196, w: 252,
+      io: [{ in: 'model', inColor: '#b57bff', out: 'patched_model', outColor: '#b57bff' }], rows: [{ k: 'strength', v: '1.00' }, { k: 'pre_cfg', v: 'false' }] },
+    { id: 'edit1', title: 'Edit Model Reference Method 01', accent: '#ff9f45', key: 'edit', x: 830, y: 320, w: 252,
+      io: [{ in: 'conditioning', inColor: '#ff9f45', out: 'CONDITIONING', outColor: '#ff9f45' }], rows: [{ k: 'reference_latent', v: 'index_timestep_zero' }] },
+    { id: 'edit2', title: 'Edit Model Reference Method 02', accent: '#ff9f45', key: 'edit', x: 830, y: 424, w: 252,
+      io: [{ in: 'conditioning', inColor: '#ff9f45', out: 'CONDITIONING', outColor: '#ff9f45' }], rows: [{ k: 'reference_latent', v: 'index_timestep_zero' }] },
+    { id: 'ks', title: 'KSampler', accent: '#8fe3c0', key: 'ksampler', x: 1130, y: 92, w: 252,
+      io: [{ in: 'model', inColor: '#b57bff', out: 'LATENT', outColor: '#ff7bd5' }, { in: 'positive', inColor: '#ff9f45' }, { in: 'negative', inColor: '#ff9f45' }, { in: 'latent_image', inColor: '#ff7bd5' }],
+      rows: [{ k: 'seed', v: '562638270362419' }, { k: 'steps', v: '4' }, { k: 'cfg', v: '1.0' }, { k: 'sampler_name', v: 'euler' }, { k: 'scheduler', v: 'simple' }, { k: 'denoise', v: '1.00' }] },
+    { id: 'dec', title: 'VAE Decode', accent: '#8fe3c0', x: 1420, y: 92, w: 200,
+      io: [{ in: 'samples', inColor: '#ff7bd5', out: 'IMAGE', outColor: '#8fe3c0' }, { in: 'vae', inColor: '#ff6b6b' }] }
+  ];
+
+  static LINKS = [
+    ['unet', 350, 122, 'lora', 36, 246, 'model'],
+    ['lora', 350, 246, 'aura', 830, 122, 'model'],
+    ['aura', 1082, 122, 'cfg', 830, 226, 'model'],
+    ['cfg', 1082, 226, 'ks', 1130, 122, 'model'],
+    ['clip', 350, 370, 'pos', 426, 122, 'clip'],
+    ['clip', 350, 370, 'neg', 426, 470, 'clip'],
+    ['vae', 350, 530, 'pos', 426, 140, 'vae'],
+    ['vae', 350, 530, 'neg', 426, 488, 'vae'],
+    ['vae', 350, 530, 'dec', 1420, 140, 'vae'],
+    ['img1', 206, 860, 'pos', 426, 158, 'image'],
+    ['img2', 390, 860, 'pos', 426, 176, 'image'],
+    ['img3', 574, 860, 'pos', 426, 194, 'image'],
+    ['img1', 206, 860, 'neg', 426, 506, 'image'],
+    ['img2', 390, 860, 'neg', 426, 524, 'image'],
+    ['img3', 574, 860, 'neg', 426, 542, 'image'],
+    ['pos', 782, 122, 'edit1', 830, 350, 'cond'],
+    ['neg', 782, 470, 'edit2', 830, 454, 'cond'],
+    ['edit1', 1082, 350, 'ks', 1130, 140, 'cond'],
+    ['edit2', 1082, 454, 'ks', 1130, 158, 'cond'],
+    ['ks', 1382, 122, 'dec', 1420, 122, 'latent'],
+    ['dec', 1620, 122, 'prev', 1420, 232, 'out']
+  ];
+
+  renderVals() {
+    const data = [
+      { kicker: 'AI Fashion & Multimedia', title: 'Nandemoii', body: 'KI-generierte Fashion-Editorials und Bewegtbild für eine fiktive Streetwear-Kollektion — von Moodboard und Prompt-Design über Retusche bis zum finalen Multimedia-Rollout.', tags: ['Art Direction', 'Generative AI', 'Motion'] },
+      { kicker: 'AI Workflow & Image Processing', title: 'Virtual Try-On', body: 'Ein reproduzierbarer Workflow, der Produktaufnahmen automatisiert auf Modelle überträgt: Segmentierung, Pose-Matching und Batch-Processing in einem Pipeline-Setup.', tags: ['Workflow', 'Image Processing', 'Automation'] },
+      { kicker: 'AI Accessory & Campaign', title: 'Eggo', body: 'Kampagnenkonzept für eine Eyewear-Serie: Produktvisualisierung, Kampagnen-Keyvisuals und Social-Assets, vollständig KI-gestützt produziert.', tags: ['Campaign', 'Product Viz', 'Social'] }
+    ];
+    const W = 1900, H = 1500;
+    const raw = [
+      { label: 'MIDJOURNEY', x: 240, y: 602, w: 258, h: 300, text: 'handsome male figure transformed into a living inflatable balloon being, human proportions but made entirely of glossy inflated vinyl, soft rounded body, oversized balloon limbs, subtle facial features preserved, realistic black eyes, cute yet elegant, floating slightly above the ground, luxury fashion campaign aesthetic, surreal romance, dreamlike reality, contemporary art sculpture meets human character, pearl cream material, highly reflective surface, inflated wrinkles and seams, emotional expression, gentle posture, whimsical but sophisticated, not a mascot, not a toy, realistic fashion photography, cinematic lighting, impossible reality, luxury editorial, standing beside a fashion model, photorealistic, hyper detailed, soft pastel environment, dreamcore atmosphere, believable inflatable skin texture, iconic character design, premium surrealism' },
+      { label: 'MIDJOURNEY', x: 238, y: 1062, w: 218, h: 214, src: 'assets/workflow-midjourney1.avif' },
+      { label: 'MIDJOURNEY', x: 573, y: 605, w: 308, h: 385, src: 'assets/workflow-midjourney2.avif' },
+      { label: 'MIDJOURNEY', x: 597, y: 1078, w: 165, h: 205, src: 'assets/workflow-midjourney3.avif' },
+      { label: 'MIDJOURNEY', x: 998, y: 605, w: 300, h: 385, src: 'assets/workflow-midjourney4.avif' },
+      { label: 'MIDJOURNEY', x: 1015, y: 1038, w: 268, h: 352, src: 'assets/workflow-midjourney5.avif' },
+      { label: 'CHATGPT', x: 1360, y: 605, w: 300, h: 92, text: 'isolating the sunglasses from image and turning it into a clean catalog/editorial product image. the sunglasses are made of metallic pink steel and the shades pink translucent' },
+      { label: 'CHATGPT', x: 1360, y: 732, w: 305, h: 318, src: 'assets/workflow-chatgpt1.avif' },
+      { label: 'CHATGPT', x: 1358, y: 1100, w: 230, h: 285, src: 'assets/workflow-chatgpt2.avif' }
+    ];
+    const nodes = raw.map(n => ({
+      label: n.label, text: n.text || '', isImage: !n.text, src: n.src || '',
+      left: (n.x / W) * 100, top: (n.y / H) * 100, width: (n.w / W) * 100,
+      hStyle: n.text ? 'auto' : ((n.h / H) * 100) + '%'
+    }));
+    const links = [
+      [456, 1074, 573, 628], [573, 628, 597, 1092, -150, 150],
+      [762, 1100, 998, 628, 190, 60], [881, 628, 998, 628],
+      [881, 628, 1015, 1043, 130, 130],
+      [1283, 1043, 1360, 762], [1283, 1043, 1360, 1128]
+    ];
+    const edges = links.map(([x1, y1, x2, y2, c1, c2]) => {
+      const dx = Math.max(70, Math.abs(x2 - x1) * 0.55);
+      const o1 = c1 || dx, o2 = c2 || dx;
+      return { x1, y1, x2, y2, d: `M ${x1} ${y1} C ${x1 + o1} ${y1}, ${x2 - o2} ${y2}, ${x2} ${y2}` };
+    });
+    const featureLabels = ['Product to model', 'Edit', 'Change Angle'];
+    const features = featureLabels.map((label, i) => ({
+      label, index: i,
+      selected: this.state.feature === i,
+      bg: this.state.feature === i ? '#5257b0' : '#fff',
+      color: this.state.feature === i ? '#fff' : '#111',
+      iconBg: this.state.feature === i ? 'rgba(255,255,255,.22)' : '#e7e8f6',
+      pick: () => this.setState({ feature: i })
+    }));
+    const playing = this.state.reelPlaying;
+    return {
+      nodes, edges, features,
+      feat0: (this.state.feature || 0) === 0,
+      feat1: (this.state.feature || 0) === 1,
+      feat2: (this.state.feature || 0) === 2,
+      showNandemoii: this.state.modal === 'nandemoii',
+      showEggo: this.state.modal === 'eggo',
+      curtainRef: this.curtainRef,
+      solLabel: '0' + ((this.state.solVideo || 0) + 1),
+      showComfy: this.state.modal === 'comfy',
+      openComfy: () => this.openModal('comfy', { zoom: 0.62 }),
+      zoom: this.state.zoom || 0.62,
+      canvasW: Math.round(1800 * (this.state.zoom || 0.62)),
+      canvasH: Math.round(1330 * (this.state.zoom || 0.62)),
+      zoomPct: Math.round((this.state.zoom || 0.62) * 100) + '%',
+      zoomIn: () => this.setState({ zoom: Math.min(1.4, (this.state.zoom || 0.62) + 0.12) }),
+      zoomOut: () => this.setState({ zoom: Math.max(0.3, (this.state.zoom || 0.62) - 0.12) }),
+      zoomReset: () => this.setState({ zoom: 0.62 }),
+      panStart: (e) => this.startPan(e),
+      comfyNodes: Component.NODES.map((n) => {
+        return {
+          x: n.x, y: n.y, w: n.w, title: n.title, accent: n.accent,
+          titleBg: 'rgba(255,255,255,.05)',
+          border: 'rgba(255,255,255,.10)',
+          glow: '0 12px 30px -18px rgba(0,0,0,.9)',
+          io: (n.io || []).map((p) => ({ in: p.in || '', out: p.out || '', inColor: p.inColor || Component.C.none, outColor: p.outColor || 'transparent' })),
+          rows: n.rows || [],
+          hasText: !!n.text, text: n.text || '', textH: n.textH || 60,
+        };
+      }),
+      comfyLinks: Component.LINKS.map((l) => {
+        const x1 = l[1], y1 = l[2], x2 = l[4], y2 = l[5];
+        const dx = Math.max(60, Math.abs(x2 - x1) * 0.5);
+        return { d: 'M ' + x1 + ' ' + y1 + ' C ' + (x1 + dx) + ' ' + y1 + ', ' + (x2 - dx) + ' ' + y2 + ', ' + x2 + ' ' + y2, color: Component.C[l[6]] };
+      }),
+      showSerum: this.state.modal === 'serum',
+      showImpressum: this.state.modal === 'impressum',
+      openImpressum: () => this.openModal('impressum'),
+      openSerum: () => this.openModal('serum', { phase: 0 }),
+      phase: Component.PHASES[this.state.phase || 0],
+      phasePair: !Component.PHASES[this.state.phase || 0].single,
+      phaseSingle: !!Component.PHASES[this.state.phase || 0].single,
+      ph1Active: (this.state.phase || 0) === 0,
+      ph2Active: (this.state.phase || 0) === 1,
+      ph3Active: (this.state.phase || 0) === 2,
+      ph4Active: (this.state.phase || 0) === 3,
+      ph5Active: (this.state.phase || 0) === 4,
+      ph6Active: (this.state.phase || 0) === 5,
+      ph1Off: (this.state.phase || 0) !== 0,
+      ph2Off: (this.state.phase || 0) !== 1,
+      ph3Off: (this.state.phase || 0) !== 2,
+      ph4Off: (this.state.phase || 0) !== 3,
+      ph5Off: (this.state.phase || 0) !== 4,
+      ph6Off: (this.state.phase || 0) !== 5,
+      setPh1: () => this.setState({ phase: 0 }),
+      setPh2: () => this.setState({ phase: 1 }),
+      setPh3: () => this.setState({ phase: 2 }),
+      setPh4: () => this.setState({ phase: 3 }),
+      setPh5: () => this.setState({ phase: 4 }),
+      setPh6: () => this.setState({ phase: 5 }),
+      egLabel: '0' + ((this.state.egImg || 0) + 1),
+      eg1Active: (this.state.egImg || 0) === 0,
+      eg2Active: (this.state.egImg || 0) === 1,
+      eg1Off: (this.state.egImg || 0) !== 0,
+      eg2Off: (this.state.egImg || 0) !== 1,
+      setEg1: () => this.setState({ egImg: 0 }),
+      setEg2: () => this.setState({ egImg: 1 }),
+      sol1Active: (this.state.solVideo || 0) === 0,
+      sol2Active: (this.state.solVideo || 0) === 1,
+      sol3Active: (this.state.solVideo || 0) === 2,
+      sol1Off: (this.state.solVideo || 0) !== 0,
+      sol2Off: (this.state.solVideo || 0) !== 1,
+      sol3Off: (this.state.solVideo || 0) !== 2,
+      setSol1: () => this.setState({ solVideo: 0 }),
+      setSol2: () => this.setState({ solVideo: 1 }),
+      setSol3: () => this.setState({ solVideo: 2 }),
+      openEggo: () => this.openModal('eggo'),
+      openNandemoii: () => this.openModal('nandemoii'),
+      closeModal: () => this.closeModal(),
+      songRef: this.songRef,
+      songIcon: this.state.songPlaying ? '❚❚' : '▶',
+      songPct: ((this.state.songPct || 0) * 100).toFixed(2) + '%',
+      songTime: this.fmtTime(this.state.songCur || 0) + ' / ' + this.fmtTime(this.state.songDur || 0),
+      toggleSong: () => {
+        const a = this.songRef.current;
+        if (!a) return;
+        if (a.paused) { const p = a.play(); if (p && p.catch) p.catch(() => {}); this.setState({ songPlaying: true }); }
+        else { a.pause(); this.setState({ songPlaying: false }); }
+      },
+      onSongTime: (e) => {
+        const a = e.currentTarget;
+        const d = a.duration || 0;
+        this.setState({ songPct: d ? a.currentTime / d : 0, songCur: a.currentTime, songDur: d });
+      },
+      onSongEnd: () => this.setState({ songPlaying: false, songPct: 0, songCur: 0 }),
+      syncAudioLabel: (e) => {
+        const v = e.currentTarget;
+        const btn = v.parentElement && v.parentElement.querySelector('button');
+        if (!btn) return;
+        const lbl = btn.querySelector('[data-audio-label]');
+        if (lbl) lbl.textContent = v.muted ? 'Audio on' : 'Audio off';
+        const ico = btn.querySelector('span');
+        if (ico) ico.textContent = v.muted ? '🔇' : '🔊';
+      },
+      toggleAudio: (e) => {
+        const btn = e.currentTarget;
+        const v = btn.parentElement && btn.parentElement.querySelector('video');
+        if (!v) return;
+        v.muted = !v.muted;
+        if (!v.muted) { v.volume = 1; const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+        const lbl = btn.querySelector('[data-audio-label]');
+        if (lbl) lbl.textContent = v.muted ? 'Audio on' : 'Audio off';
+        const ico = btn.querySelector('span');
+        if (ico) ico.textContent = v.muted ? '🔇' : '🔊';
+      },
+      toggleReel: () => this.setState(s2 => ({ reelPlaying: !s2.reelPlaying })),
+      reelIcon: playing ? '❚❚' : '▶',
+      reelState: playing ? 'läuft mit Ton' : 'zum Abspielen klicken',
+      reelProgress: playing ? '38%' : '0%',
+      featureLabel: featureLabels[this.state.feature],
+      featureStep: 'Preview ' + (this.state.feature + 1) + ' / ' + featureLabels.length,
+      projects: data.map((p, i) => ({ ...p, open: () => this.setState({ active: data[i] }) })),
+      active: this.state.active,
+      close: () => this.setState({ active: null }),
+      stop: (e) => e.stopPropagation()
+    };
+  }
+}
+</script>
+</body>
+</html>
