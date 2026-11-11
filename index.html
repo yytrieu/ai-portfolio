@@ -993,6 +993,10 @@ class Component extends DCLogic {
       if (this.state.modal) { this.closeModal(); } else { this.setState({ active: null }); }
     };
     window.addEventListener('keydown', this.onKey);
+    this.onHash = () => this.applyHash();
+    window.addEventListener('popstate', this.onHash);
+    window.addEventListener('hashchange', this.onHash);
+    this.applyHash();
     this.readSongDuration();
   }
   componentDidUpdate() { this.syncCurtain(); this.readSongDuration(); }
@@ -1026,6 +1030,8 @@ class Component extends DCLogic {
   componentWillUnmount() {
     window.removeEventListener('scroll', this.onScroll);
     window.removeEventListener('keydown', this.onKey);
+    window.removeEventListener('popstate', this.onHash);
+    window.removeEventListener('hashchange', this.onHash);
     if (this.curtainScroller) this.curtainScroller.removeEventListener('scroll', this.onCurtain);
   }
   solBtn(i) {
@@ -1089,10 +1095,29 @@ class Component extends DCLogic {
     window.addEventListener('mouseup', up);
   }
 
-  openModal(name, extra) {
-    this.savedScroll = window.scrollY || document.documentElement.scrollTop || 0;
+  static SLUGS = { nandemoii: 'nandemoii', eggo: 'eggo', comfy: 'comfyui', serum: 'serum', impressum: 'impressum' };
+  static ROUTES = { nandemoii: ['nandemoii'], eggo: ['eggo'], comfyui: ['comfy', { zoom: 0.62 }], serum: ['serum', { phase: 0 }], impressum: ['impressum'] };
+
+  openModal(name, extra, fromHash) {
+    if (!this.state.modal) this.savedScroll = window.scrollY || document.documentElement.scrollTop || 0;
     this.setState(Object.assign({ modal: name, reelPlaying: false }, extra || {}));
     document.body.style.overflow = 'hidden';
+    if (!fromHash) {
+      const slug = Component.SLUGS[name];
+      if (slug && window.location.hash !== '#' + slug) {
+        try { window.history.pushState({ modal: name }, '', '#' + slug); this.pushedHash = true; } catch (e) {}
+      }
+    }
+  }
+
+  applyHash() {
+    const slug = (window.location.hash || '').replace(/^#/, '').toLowerCase();
+    const route = Component.ROUTES[slug];
+    if (route) {
+      if (this.state.modal !== route[0]) this.openModal(route[0], route[1], true);
+    } else if (this.state.modal) {
+      this.closeModal(true);
+    }
   }
 
   fmtTime(s) {
@@ -1102,11 +1127,18 @@ class Component extends DCLogic {
     return m + ':' + (r < 10 ? '0' : '') + r;
   }
 
-  closeModal() {
+  closeModal(fromPop) {
     const y = this.savedScroll || 0;
     this.setState({ modal: null, reelPlaying: false });
     document.body.style.overflow = '';
     requestAnimationFrame(() => window.scrollTo(0, y));
+    if (fromPop) { this.pushedHash = false; return; }
+    if (window.location.hash) {
+      try {
+        if (this.pushedHash) { this.pushedHash = false; window.history.back(); }
+        else { window.history.replaceState(null, '', window.location.pathname + window.location.search); }
+      } catch (e) {}
+    }
   }
 
 
